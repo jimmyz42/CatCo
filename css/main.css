@@ -10,3 +10,9 @@ html, body, .main {
 .main {
   padding-top: 70px;
 }
+
+img.logo {
+  position: absolute;
+  top: 5px;
+  height: 40px;
+}

@@ -1,0 +1,23 @@
+.post-container {
+  padding: 15px 30px 15px 30px;
+}
+
+.post {
+  background-color: #ffddb5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.author {
+  font-style: italic;
+  float: right;
+}
+
+h1 {
+  text-align: center;
+}

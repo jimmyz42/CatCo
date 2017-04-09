@@ -6,12 +6,24 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <!-- Stylesheets -->
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/choose.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/forum.css">
 
-    <title>CatCo</title>
+    <script src="data/posts.js"></script>
+    <script>
+      $(function() {
+        var posts = post_content['posts'];
+        for(var i=0; i<posts.length; i++) {
+          var container = $('<div class="row post-container"></div>').appendTo('.main');
+          console.log(container);
+          var post = $('<div class="col-sm-12 post"></div>').appendTo(container);
+          post.append('<span class="title">' + posts[i].title + '</span>');
+          post.append('<span class="author">' + posts[i].author + '</span>');
+          post.append('<br><p>' + posts[i].text + '</p>');
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Navbar -->
@@ -31,26 +43,11 @@
       </div>
     </nav>
 
-    <!-- Main page content -->
+    <!-- Main Content -->
     <div class="container-fluid main">
-      <div class="row">
-        <div class="col-sm-6 choose">
-          <a href="my_cats.html">
-            <button class="choose-button">
-              <h1>Are you a cat owner?</h1>
-              <img class="choose-button-image" src="https://thinktwicebeforeyouadopt.files.wordpress.com/2014/10/bigstockphoto_woman_with_cat_734854.jpg" />
-            </button>
-          </a>
-        </div>
-        <div class="col-sm-6 choose">
-          <a href="cat_listings.html">
-            <button class="choose-button">
-              <h1>Are you a cat sitter?</h1>
-              <img class="choose-button-image" src="https://thinktwicebeforeyouadopt.files.wordpress.com/2014/10/bigstockphoto_woman_with_cat_734854.jpg" />
-            </button>
-          </a>
-        </div>
-      </div>
+    <h1>Forums</h1>
     </div>
+
+    <!-- Modal -->
   </body>
 </html>
