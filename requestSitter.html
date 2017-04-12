@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/requestSitter.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="js/requestSitter.js"></script>
+
+    <title>CatCo - Request a Catsitter</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="choose.html">
+            <img src="images/logo.png" class="logo"/>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
+            <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main page content -->
+    <div class="container-fluid main">
+      <div class="row">
+        <h1>Request a Catsitter</h1>
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header edit-header">
+              <h2>Date and Price</h2>
+            </div>
+            <div class="section-content">
+              <p><span class="input-label">Dates:</span> <input type="text" id="datepicker-start" required> to <input type="text" id="datepicker-end" required></p>
+              <p><span class="input-label">Price:</span> $<input type="number" id="price" required> /day</p>
+              Not sure what price to charge? Check the <a href="forums.html">forums</a>.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Left half of page -->
+          <div class="col-md-6 request">
+            <div class="profile">
+              <div class="section-header">
+                <h2 class="edit-header">Profile and Contact</h2>
+                <span class="pull-right">
+                  <button class="btn btn-info" type="button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                </span>
+              </div>
+              <div class="section-content">
+                <div class="row">
+                  <div class="col-lg-4 picture">
+                    <img src="http://placehold.it/200/200" />
+                  </div>
+                  <div class="col-lg-8 description">
+                    <p>Hi! I'm Ginger. I like long walks along the beach and catching mice.</p>
+                    <p>Personality Type: Playful</p>
+                    <p>Favorite Toy: Gray Mouse</p>
+                    <p>Normal Behaviors:</p>
+                    <ul>
+                      <li>Afternoon naps</li>
+                      <li>Vomiting around strangers</li>
+                    </ul>
+                    <p>Feed 1 cup per meal.</p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-8 col-md-offset-4">
+                    <table class="contact">
+                      <tbody>
+                        <tr>
+                          <td class="input-label">My Phone:</td>
+                          <td>(555) 555-5555</td>
+                        </tr>
+                        <tr>
+                          <td class="input-label">Preferred Vet Contact:</td>
+                        </tr>
+                        <tr>
+                          <td class="input-label">Name:</td>
+                          <td>Purrfect Pet Care</td>
+                        </tr>
+                        <tr>
+                          <td class="input-label">Address:</td>
+                          <td>123 Cat Ave</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>Boston, MA</td>
+                        </tr>
+                        <tr>
+                          <td class="input-label">Phone:</td>
+                          <td>(123) 123-1231</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right half of page -->
+          <div class="col-md-6 request">
+            <div class="schedule">
+              <div class="section-header">
+                <h2 class="edit-header">Care Schedule</h2>
+                <span class="pull-right">
+                  <button class="btn btn-info" type="button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                </span>
+              </div>
+              <div class="section-content">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="input-label">Feed:</td>
+                      <td>2 times/day</td>
+                    </tr>
+                    <tr>
+                      <td class="input-label">Play:</td>
+                      <td>1 times/day</td>
+                    </tr>
+                    <tr>
+                      <td class="input-label">Water:</td>
+                      <td>1 times/day</td>
+                    </tr>
+                    <tr>
+                      <td class="input-label">Litter:</td>
+                      <td>1 times/week</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3>Special Care Notes:</h3>
+                <p>If you get the chance, please take Ginger on a long walk at the beach. Ginger loves it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Request catsitter -->
+        <div class="row request-button-container">
+          <span class="pull-right">
+            <button class="btn btn-success request-button" type="submit"><span class="glyphicon glyphicon-plus"></span> Request Catsitter</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

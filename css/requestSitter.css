@@ -1,0 +1,28 @@
+.main {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.edit-header {
+	display: inline;
+}
+
+.section-header {
+  padding: 10px 0;
+}
+
+.section-content {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.contact td {
+  padding-right: 15px;
+}
+
+.input-label {
+  font-weight: bold;
+}
