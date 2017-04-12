@@ -5,14 +5,13 @@
 
 .outer {
 	background-color: white; 
-	margin: 2px;
-	box-shadow: 3px 3px 5px 6px #ccc;
-	border-radius: 25px;
+  margin: 2px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  border-radius: 25px;
 }
 
 .inner {
 	background-color: #ffddb5;
-	z-index: 5;
 }
 
 h3 {
@@ -57,4 +56,22 @@ input[type=checkbox]
   margin-left: 50px;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.modalButton {
+  height: 150px;
+  width: 150px;
+  margin: 10px,10px,10px,10px;
+}
+
+.table {
+  width: 75%;
+  margin: 0 auto;
+}
+
+td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
