@@ -36,7 +36,7 @@
     </nav>
 
     <!-- Main page content -->
-    <div class="container-fluid main">
+    <div class="container-fluid main form-inline">
       <div class="row">
         <h1>Request a Catsitter</h1>
       </div>
@@ -47,9 +47,31 @@
               <h2>Date and Price</h2>
             </div>
             <div class="section-content">
-              <p><span class="input-label">Dates:</span> <input type="text" id="datepicker-start" required> to <input type="text" id="datepicker-end" required></p>
-              <p><span class="input-label">Price:</span> $<input type="number" id="price" required> /day</p>
-              Not sure what price to charge? Check the <a href="forums.html">forums</a>.
+              <table class="date-and-price-table">
+                <tbody>
+                  <tr>
+                    <td class="input-label">Dates:</td>
+                    <td></td>
+                    <td>
+                      <div class="form-inline">
+                        <input type="text" class="form-control" id="datepicker-start" required>
+                        to
+                        <input type="text" class="form-control" id="datepicker-end" required>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="input-label">Price:</td>
+                    <td>$</td>
+                    <td>
+                      <div class="form-inline">
+                        <input type="number" class="form-control" id="price" required> /day
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Not sure what price to charge? Check the <a href="forums.html">forums</a>.</p>
             </div>
           </div>
         </div>
@@ -60,60 +82,94 @@
               <div class="section-header">
                 <h2 class="edit-header">Profile and Contact</h2>
                 <span class="pull-right">
-                  <button class="btn btn-info" type="button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <button class="btn btn-info" type="button" id="edit-profile-button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <button class="btn btn-success" type="button" id="save-profile-button" style="display:none"><span class="glyphicon glyphicon-ok"></span> Save Edits</button>
                 </span>
               </div>
               <div class="section-content">
-                <div class="row">
-                  <div class="col-lg-4 picture">
-                    <img src="http://placehold.it/200/200" />
-                  </div>
-                  <div class="col-lg-8 description">
-                    <p>Hi! I'm Ginger. I like long walks along the beach and catching mice.</p>
-                    <p>Personality Type: Playful</p>
-                    <p>Favorite Toy: Gray Mouse</p>
-                    <p>Normal Behaviors:</p>
-                    <ul>
-                      <li>Afternoon naps</li>
-                      <li>Vomiting around strangers</li>
-                    </ul>
-                    <p>Feed 1 cup per meal.</p>
-                  </div>
-                </div>
-
-                <hr>
-
-                <div class="row">
-                  <div class="col-md-8 col-md-offset-4">
-                    <table class="contact">
-                      <tbody>
-                        <tr>
-                          <td class="input-label">My Phone:</td>
-                          <td>(555) 555-5555</td>
-                        </tr>
-                        <tr>
-                          <td class="input-label">Preferred Vet Contact:</td>
-                        </tr>
-                        <tr>
-                          <td class="input-label">Name:</td>
-                          <td>Purrfect Pet Care</td>
-                        </tr>
-                        <tr>
-                          <td class="input-label">Address:</td>
-                          <td>123 Cat Ave</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>Boston, MA</td>
-                        </tr>
-                        <tr>
-                          <td class="input-label">Phone:</td>
-                          <td>(123) 123-1231</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                <table class="profile-table">
+                  <tbody>
+                    <tr>
+                      <td class="col text-center">
+                        <img id="photo" src="images/ginger-200-200.png" /><br />
+                        <!-- http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button -->
+                        <label class="btn btn-info btn-file" id="photo-upload" style="display:none">
+                          <span class="glyphicon glyphicon-picture"></span> Upload Photo <input type="file" accept="image/*" style="display:none">
+                        </label>
+                      </td>
+                      <td class="lastcol">
+                        <div id="profile">
+                          <p>Hi! I'm Ginger. I like long walks along the beach and catching mice.</p>
+                          <p>Personality Type: Playful</p>
+                          <p>Favorite Toy: Gray Mouse</p>
+                          <p>Normal Behaviors:</p>
+                          <ul>
+                            <li>Afternoon naps</li>
+                            <li>Vomiting around strangers</li>
+                          </ul>
+                          <p>Feed 1 cup per meal.</p>
+                        </div>
+                        <textarea id="edit-profile" style="display:none"></textarea>
+                      </td>
+                    </tr>
+                    <tr><td class="col"></td><td class="lastcol"><hr></td></tr>
+                    <tr>
+                      <td class="col"></td>
+                      <td class="lastcol">
+                        <table class="contact-table">
+                          <tbody>
+                            <tr>
+                              <td colspan="2" class="lastcol"><h3>My Contact Info</h3></td>
+                            </tr>
+                            <tr>
+                              <td class="col input-label">My Phone:</td>
+                              <td class="lastcol">
+                                <div id="my-phone">(555) 555-5555</div>
+                                <input type="text" class="form-control" id="edit-my-phone" style="display:none">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="col input-label">My Email:</td>
+                              <td class="lastcol">
+                                <div id="my-email">c4tzrprecious@meow.com</div>
+                                <input type="text" class="form-control" id="edit-my-email" style="display:none">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" class="lastcol"><hr></td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" class="lastcol"><h3>Preferred Vet Contact</h3></td>
+                            </tr>
+                            <tr>
+                              <td class="col input-label">Name:</td>
+                              <td class="lastcol">
+                                <div id="vet-name">Purrfect Pet Care</div>
+                                <input type="text" class="form-control" id="edit-vet-name" style="display:none">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="col input-label">Address:</td>
+                              <td class="lastcol">
+                                <div id="vet-address-1">123 Cat Ave</div>
+                                <input type="text" class="input-address form-control" id="edit-vet-address-1" style="display:none">
+                                <div id="vet-address-2">Boston, MA</div>
+                                <input type="text" class="input-address form-control" id="edit-vet-address-2" style="display:none">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="col input-label">Phone:</td>
+                              <td class="lastcol">
+                                <div id="vet-phone">(123) 123-1231</div>
+                                <input type="text" class="form-control" id="edit-vet-phone" style="display:none">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -123,32 +179,62 @@
               <div class="section-header">
                 <h2 class="edit-header">Care Schedule</h2>
                 <span class="pull-right">
-                  <button class="btn btn-info" type="button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <button class="btn btn-info" type="button" id="edit-schedule-button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <button class="btn btn-success" type="button" id="save-schedule-button" style="display:none"><span class="glyphicon glyphicon-ok"></span> Save Edits</button>
                 </span>
               </div>
               <div class="section-content">
-                <table>
+                <table class="schedule-table">
                   <tbody>
                     <tr>
                       <td class="input-label">Feed:</td>
-                      <td>2 times/day</td>
+                      <td>
+                        <span id="feed">2</span><input type="number" class="form-control schedule-input" id="edit-feed" style="display:none">
+                         time(s)/<span id="feed-units">day</span>
+                        <select id="edit-feed-units" style="display:none">
+                          <option selected="selected">day</option>
+                          <option>week</option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td class="input-label">Play:</td>
-                      <td>1 times/day</td>
+                      <td>
+                        <span id="play">1</span><input type="number" class="form-control schedule-input" id="edit-play" style="display:none">
+                         time(s)/<span id="play-units">day</span>
+                        <select id="edit-play-units" style="display:none">
+                          <option selected="selected">day</option>
+                          <option>week</option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td class="input-label">Water:</td>
-                      <td>1 times/day</td>
+                      <td>
+                        <span id="water">1</span><input type="number" class="form-control schedule-input" id="edit-water" style="display:none">
+                         time(s)/<span id="water-units">day</span>
+                        <select id="edit-water-units" style="display:none">
+                          <option selected="selected">day</option>
+                          <option>week</option>
+                        </select>
+                      </td>
                     </tr>
                     <tr>
                       <td class="input-label">Litter:</td>
-                      <td>1 times/week</td>
+                      <td>
+                        <span id="litter">1</span><input type="number" class="form-control schedule-input" id="edit-litter" style="display:none">
+                         time(s)/<span id="litter-units">week</span>
+                        <select id="edit-litter-units" style="display:none">
+                          <option>day</option>
+                          <option selected="selected">week</option>
+                        </select>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
                 <h3>Special Care Notes:</h3>
-                <p>If you get the chance, please take Ginger on a long walk at the beach. Ginger loves it.</p>
+                <div id="special-care"><p>If you get the chance, please take Ginger on a long walk at the beach. Ginger loves it.</p></div>
+                <textarea id="edit-special-care" style="display:none"></textarea>
               </div>
             </div>
           </div>
@@ -156,10 +242,29 @@
         <!-- Request catsitter -->
         <div class="row request-button-container">
           <span class="pull-right">
-            <button class="btn btn-success request-button" type="submit"><span class="glyphicon glyphicon-plus"></span> Request Catsitter</button>
+            <button class="btn btn-lg btn-success request-button" type="submit"><span class="glyphicon glyphicon-plus"></span> Request Catsitter</button>
           </span>
         </div>
       </form>
+    </div>
+
+    <!-- Unsaved changes modal -->
+    <div class="modal fade" id="unsaved-changes-modal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">You have unsaved changes!</h4>
+          </div>
+          <div class="modal-body">
+            <p>If you continue now, the changes you made to your cat's profile and schedule will NOT be saved. Do you want to request a catsitter anyways?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="save-changes-dismiss" data-dismiss="modal">Nevermind, I want to save my changes</button>
+            <button type="button" class="btn btn-warning" id="discard-changes-submit">Discard my changes and request a catsitter</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

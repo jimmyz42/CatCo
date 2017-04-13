@@ -19,10 +19,74 @@
   margin-bottom: 20px;
 }
 
-.contact td {
-  padding-right: 15px;
+#photo {
+  margin-bottom: 10px;
+}
+
+.date-and-price-table td {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.profile-table td {
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+.contact-table td, .schedule-table td {
+  padding: 0 10px 10px 0;
+}
+
+.contact-table {
+  width: 100%;
+}
+
+.contact-table h3 {
+  margin-top: 5px;
 }
 
 .input-label {
   font-weight: bold;
+}
+
+.schedule-input {
+  width: 60px !important;
+}
+
+#edit-profile {
+  width: 100%;
+  height: 200px;
+}
+
+#edit-special-care {
+  width: 100%;
+  height: 200px;
+}
+
+.col {
+  white-space: nowrap;
+}
+
+.lastcol {
+  width: 99%;
+}
+
+#edit-vet-address-1 {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#edit-vet-address-2 {
+  display: block;
+}
+
+.request-button-container {
+  margin-bottom: 20px;
+}
+
+.glowing-border {
+  /* http://stackoverflow.com/questions/5670879/css-html-create-a-glowing-border-around-an-input-field */
+  outline: none;
+  border-color: #FF9803;
+  box-shadow: 0 0 10px #FF9803;
 }
