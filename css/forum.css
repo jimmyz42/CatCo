@@ -2,7 +2,7 @@
   padding: 15px 30px 15px 30px;
 }
 
-.post {
+.section {
   background-color: #ffddb5;
   padding: 20px;
   border-radius: 10px;
@@ -21,3 +21,19 @@
 h1 {
   text-align: center;
 }
+
+.down-menu {
+  float: right;
+}
+
+.section-title {
+  font: italic 18pt arial;
+}
+
+.post {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+

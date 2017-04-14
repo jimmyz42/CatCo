@@ -11,19 +11,7 @@
     <link rel="stylesheet" href="css/forum.css">
 
     <script src="data/posts.js"></script>
-    <script>
-      $(function() {
-        var posts = post_content['posts'];
-        for(var i=0; i<posts.length; i++) {
-          var container = $('<div class="row post-container"></div>').appendTo('.main');
-          console.log(container);
-          var post = $('<div class="col-sm-12 post"></div>').appendTo(container);
-          post.append('<span class="title">' + posts[i].title + '</span>');
-          post.append('<span class="author">' + posts[i].author + '</span>');
-          post.append('<br><p>' + posts[i].text + '</p>');
-        }
-      });
-    </script>
+    <script src="js/forums.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -45,7 +33,24 @@
 
     <!-- Main Content -->
     <div class="container-fluid main">
-    <h1>Forums</h1>
+      <h1>Forums</h1>
+
+    <!-- Example
+      <div class="row post-container">
+        <div class="col-sm-12 section">
+          <span class="section-title">Section</span>
+          <button class="down-menu btn btn-xs btn-default" data-toggle="collapse" data-target="#sectionN">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </button>
+          <div class="panel-collapse collapse" id="sectionN">
+            <div class="post">
+              hi
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+
     </div>
 
     <!-- Modal -->
