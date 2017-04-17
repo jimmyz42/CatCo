@@ -31,70 +31,58 @@ $(document).ready(function() {
   });
 
   $('#edit-profile-button').click(function() {
-    $('#photo-upload').show();
+    $('#photo-upload').css('visibility', 'visible');
 
-    $('#edit-profile').show();
-    $('#edit-profile').val($('#profile').html());
-    $('#profile').hide();
+    // http://docs.ckeditor.com/#!/guide/dev_inline
+    $('#profile').attr('contenteditable', 'true');
+    $('#profile').addClass('editable');
+    $('#profile').focus();
 
-    $('#edit-my-phone').show();
-    $('#edit-my-phone').val($('#my-phone').text());
-    $('#my-phone').hide();
+    $('#my-phone').attr('contenteditable', 'true');
+    $('#my-phone').addClass('editable');
 
-    $('#edit-my-email').show();
-    $('#edit-my-email').val($('#my-email').text());
-    $('#my-email').hide();
+    $('#my-email').attr('contenteditable', 'true');
+    $('#my-email').addClass('editable');
 
-    $('#edit-vet-name').show();
-    $('#edit-vet-name').val($('#vet-name').text());
-    $('#vet-name').hide();
+    $('#vet-name').attr('contenteditable', 'true');
+    $('#vet-name').addClass('editable');
 
-    $('#edit-vet-address-1').show();
-    $('#edit-vet-address-1').val($('#vet-address-1').text());
-    $('#vet-address-1').hide();
+    $('#vet-address-1').attr('contenteditable', 'true');
+    $('#vet-address-1').addClass('editable');
 
-    $('#edit-vet-address-2').show();
-    $('#edit-vet-address-2').val($('#vet-address-2').text());
-    $('#vet-address-2').hide();
+    $('#vet-address-2').attr('contenteditable', 'true');
+    $('#vet-address-2').addClass('editable');
 
-    $('#edit-vet-phone').show();
-    $('#edit-vet-phone').val($('#vet-phone').text());
-    $('#vet-phone').hide();
+    $('#vet-phone').attr('contenteditable', 'true');
+    $('#vet-phone').addClass('editable');
 
     $('#edit-profile-button').hide();
     $('#save-profile-button').show();
   });
 
   $('#save-profile-button').click(function() {
-    $('#photo-upload').hide();
+    $('#photo-upload').css('visibility', 'hidden');
 
-    $('#edit-profile').hide();
-    $('#profile').html($('#edit-profile').val());
-    $('#profile').show();
+    $('#profile').attr('contenteditable', 'false');
+    $('#profile').removeClass('editable');
 
-    $('#edit-my-phone').hide();
-    $('#my-phone').html($('#edit-my-phone').val());
-    $('#my-phone').show();
+    $('#my-phone').attr('contenteditable', 'false');
+    $('#my-phone').removeClass('editable');
 
-    $('#edit-my-email').hide();
-    $('#my-email').html($('#edit-my-email').val());
-    $('#my-email').show();
+    $('#my-email').attr('contenteditable', 'false');
+    $('#my-email').removeClass('editable');
 
-    $('#edit-vet-name').hide();
-    $('#vet-name').html($('#edit-vet-name').val());
-    $('#vet-name').show();
+    $('#vet-name').attr('contenteditable', 'false');
+    $('#vet-name').removeClass('editable');
 
-    $('#edit-vet-address-1').hide();
-    $('#vet-address-1').html($('#edit-vet-address-1').val());
-    $('#vet-address-1').show();
+    $('#vet-address-1').attr('contenteditable', 'false');
+    $('#vet-address-1').removeClass('editable');
 
-    $('#edit-vet-address-2').hide();
-    $('#vet-address-2').html($('#edit-vet-address-2').val());
-    $('#vet-address-2').show();
+    $('#vet-address-2').attr('contenteditable', 'false');
+    $('#vet-address-2').removeClass('editable');
 
-    $('#edit-vet-phone').hide();
-    $('#vet-phone').html($('#edit-vet-phone').val());
-    $('#vet-phone').show();
+    $('#vet-phone').attr('contenteditable', 'false');
+    $('#vet-phone').removeClass('editable');
 
     $('#edit-profile-button').show();
     $('#save-profile-button').hide();
@@ -102,82 +90,73 @@ $(document).ready(function() {
   });
 
   $('#edit-schedule-button').click(function() {
-    $('#edit-feed').show();
-    $('#edit-feed').val($('#feed').text());
-    $('#feed').hide();
+    $('#feed').attr('contenteditable', 'true');
+    $('#feed').addClass('editable');
+    $('#feed').focus();
 
     $('#edit-feed-units').show();
     $('#edit-feed-units').val($('#feed-units').text());
     $('#feed-units').hide();
 
-    $('#edit-play').show();
-    $('#edit-play').val($('#play').text());
-    $('#play').hide();
+    $('#play').attr('contenteditable', 'true');
+    $('#play').addClass('editable');
 
     $('#edit-play-units').show();
     $('#edit-play-units').val($('#play-units').text());
     $('#play-units').hide();
 
-    $('#edit-water').show();
-    $('#edit-water').val($('#water').text());
-    $('#water').hide();
+    $('#water').attr('contenteditable', 'true');
+    $('#water').addClass('editable');
 
     $('#edit-water-units').show();
     $('#edit-water-units').val($('#water-units').text());
     $('#water-units').hide();
 
-    $('#edit-litter').show();
-    $('#edit-litter').val($('#litter').text());
-    $('#litter').hide();
+    $('#litter').attr('contenteditable', 'true');
+    $('#litter').addClass('editable');
 
     $('#edit-litter-units').show();
     $('#edit-litter-units').val($('#litter-units').text());
     $('#litter-units').hide();
 
-    $('#edit-special-care').show();
-    $('#edit-special-care').val($('#special-care').html());
-    $('#special-care').hide();
+    $('#special-care').attr('contenteditable', 'true');
+    $('#special-care').addClass('editable');
 
     $('#edit-schedule-button').hide();
     $('#save-schedule-button').show();
   });
 
   $('#save-schedule-button').click(function() {
-    $('#edit-feed').hide();
-    $('#feed').html($('#edit-feed').val());
-    $('#feed').show();
+    $('#feed').attr('contenteditable', 'false');
+    $('#feed').removeClass('editable');
 
     $('#edit-feed-units').hide();
     $('#feed-units').html($('#edit-feed-units').val());
     $('#feed-units').show();
 
-    $('#edit-play').hide();
-    $('#play').html($('#edit-play').val());
-    $('#play').show();
+    $('#play').attr('contenteditable', 'false');
+    $('#play').removeClass('editable');
 
     $('#edit-play-units').hide();
     $('#play-units').html($('#edit-play-units').val());
     $('#play-units').show();
 
-    $('#edit-water').hide();
-    $('#water').html($('#edit-water').val());
-    $('#water').show();
+    $('#water').attr('contenteditable', 'false');
+    $('#water').removeClass('editable');
 
     $('#edit-water-units').hide();
     $('#water-units').html($('#edit-water-units').val());
     $('#water-units').show();
 
-    $('#edit-litter').hide();
-    $('#litter').html($('#edit-litter').val());
-    $('#litter').show();
+    $('#litter').attr('contenteditable', 'false');
+    $('#litter').removeClass('editable');
 
     $('#edit-litter-units').hide();
     $('#litter-units').html($('#edit-litter-units').val());
     $('#litter-units').show();
 
-    $('#edit-special-care').hide();
-    $('#special-care').html($('#edit-special-care').val());
-    $('#special-care').show();
+    $('#special-care').attr('contenteditable', 'false');
+    $('#special-care').removeClass('editable');
 
     $('#edit-schedule-button').show();
     $('#save-schedule-button').hide();

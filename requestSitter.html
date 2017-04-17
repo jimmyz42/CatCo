@@ -93,7 +93,7 @@
                       <td class="col text-center">
                         <img id="photo" src="images/ginger-200-200.png" /><br />
                         <!-- http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button -->
-                        <label class="btn btn-info btn-file" id="photo-upload" style="display:none">
+                        <label class="btn btn-info btn-file" id="photo-upload" style="visibility: hidden">
                           <span class="glyphicon glyphicon-picture"></span> Upload Photo <input type="file" accept="image/*" style="display:none">
                         </label>
                       </td>
@@ -109,10 +109,10 @@
                           </ul>
                           <p>Feed 1 cup per meal.</p>
                         </div>
-                        <textarea id="edit-profile" style="display:none"></textarea>
+                        <hr>
                       </td>
                     </tr>
-                    <tr><td class="col"></td><td class="lastcol"><hr></td></tr>
+                    <!-- <tr><td class="col"></td><td class="lastcol"><hr></td></tr> -->
                     <tr>
                       <td class="col"></td>
                       <td class="lastcol">
@@ -125,14 +125,12 @@
                               <td class="col input-label">My Phone:</td>
                               <td class="lastcol">
                                 <div id="my-phone">(555) 555-5555</div>
-                                <input type="text" class="form-control" id="edit-my-phone" style="display:none">
                               </td>
                             </tr>
                             <tr>
                               <td class="col input-label">My Email:</td>
                               <td class="lastcol">
                                 <div id="my-email">c4tzrprecious@meow.com</div>
-                                <input type="text" class="form-control" id="edit-my-email" style="display:none">
                               </td>
                             </tr>
                             <tr>
@@ -145,23 +143,19 @@
                               <td class="col input-label">Name:</td>
                               <td class="lastcol">
                                 <div id="vet-name">Purrfect Pet Care</div>
-                                <input type="text" class="form-control" id="edit-vet-name" style="display:none">
                               </td>
                             </tr>
                             <tr>
                               <td class="col input-label">Address:</td>
                               <td class="lastcol">
                                 <div id="vet-address-1">123 Cat Ave</div>
-                                <input type="text" class="input-address form-control" id="edit-vet-address-1" style="display:none">
                                 <div id="vet-address-2">Boston, MA</div>
-                                <input type="text" class="input-address form-control" id="edit-vet-address-2" style="display:none">
                               </td>
                             </tr>
                             <tr>
                               <td class="col input-label">Phone:</td>
                               <td class="lastcol">
                                 <div id="vet-phone">(123) 123-1231</div>
-                                <input type="text" class="form-control" id="edit-vet-phone" style="display:none">
                               </td>
                             </tr>
                           </tbody>
@@ -189,8 +183,7 @@
                     <tr>
                       <td class="input-label">Feed:</td>
                       <td>
-                        <span id="feed">2</span><input type="number" class="form-control schedule-input" id="edit-feed" style="display:none">
-                         time(s)/<span id="feed-units">day</span>
+                        <span id="feed">2</span> time(s)/<span id="feed-units">day</span>
                         <select id="edit-feed-units" style="display:none">
                           <option selected="selected">day</option>
                           <option>week</option>
@@ -200,8 +193,7 @@
                     <tr>
                       <td class="input-label">Play:</td>
                       <td>
-                        <span id="play">1</span><input type="number" class="form-control schedule-input" id="edit-play" style="display:none">
-                         time(s)/<span id="play-units">day</span>
+                        <span id="play">1</span> time(s)/<span id="play-units">day</span>
                         <select id="edit-play-units" style="display:none">
                           <option selected="selected">day</option>
                           <option>week</option>
@@ -211,8 +203,7 @@
                     <tr>
                       <td class="input-label">Water:</td>
                       <td>
-                        <span id="water">1</span><input type="number" class="form-control schedule-input" id="edit-water" style="display:none">
-                         time(s)/<span id="water-units">day</span>
+                        <span id="water">1</span> time(s)/<span id="water-units">day</span>
                         <select id="edit-water-units" style="display:none">
                           <option selected="selected">day</option>
                           <option>week</option>
@@ -222,8 +213,7 @@
                     <tr>
                       <td class="input-label">Litter:</td>
                       <td>
-                        <span id="litter">1</span><input type="number" class="form-control schedule-input" id="edit-litter" style="display:none">
-                         time(s)/<span id="litter-units">week</span>
+                        <span id="litter">1</span> time(s)/<span id="litter-units">week</span>
                         <select id="edit-litter-units" style="display:none">
                           <option>day</option>
                           <option selected="selected">week</option>
@@ -234,7 +224,6 @@
                 </table>
                 <h3>Special Care Notes:</h3>
                 <div id="special-care"><p>If you get the chance, please take Ginger on a long walk at the beach. Ginger loves it.</p></div>
-                <textarea id="edit-special-care" style="display:none"></textarea>
               </div>
             </div>
           </div>

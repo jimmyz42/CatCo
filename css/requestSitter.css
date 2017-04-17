@@ -90,3 +90,7 @@
   border-color: #FF9803;
   box-shadow: 0 0 10px #FF9803;
 }
+
+.editable {
+  color: #888;
+}
