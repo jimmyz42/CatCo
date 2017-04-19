@@ -12,7 +12,7 @@ $(document).ready(function() {
       $('#unsaved-changes-modal').modal('show');
     } else {
       // Mock "submitting" the form by going to a My Cats page with the sitter requested
-      window.location.href = 'myCatsRequested.html';
+      window.location.href = 'my-cats-frodo.html';
     }
 
   });

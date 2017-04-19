@@ -8,9 +8,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link href="css/main.css" rel="stylesheet">
-	<link href="css/todoSitter.css" rel="stylesheet">
+		<link href="css/todoSitter.css" rel="stylesheet">
 
-	<title>CatCo</title>
+		<title>CatCo</title>
   </head>
   <body>
 	    <!-- Navbar -->
@@ -37,19 +37,19 @@
 	  				<div class='row outer'>
 	  					<h3>Ginger</h3>
 	  					<div class='"col-sm-6 col-md-6 col-lg-6 catsitterBio inner'>
-	  						<span><img src='images/ginger.png' class='profileImage'/></span>
+	  						<span><img src='images/ginger-200-200.png' class='profileImage'/></span>
 	  					</div>
 	  					<div class='"col-sm-6 col-md-6 col-lg-6 inner catsitterBio'>
 	  						Hi! I'm Ginger! I like long walks along the beach and catching mice!
 	  					</div>
 	  					<div class="table">
-		  				<table>
+		  				<table id="modalButtonsContainer">
 		  					<tr>
-		  						<td>
+		  						<td style="text-align: right">
 		  							<!--<button class="btn btn-info glyphicon glyphicon-info-sign modalButton"><br><br>More Info</button>-->
 
 
-		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#moreInfoModal"><br><br>More Info</button>
+		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#moreInfoModal"><span class="glyphicon glyphicon-info-sign"></span><br><br>More Info</button>
 
 									<!-- Modal -->
 									<div id="moreInfoModal" class="modal fade" role="dialog">
@@ -92,7 +92,7 @@
 		  						<td>
 		  							
 		  							
-		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#messageOwnerModal"><br><br>Message Owner</button>
+		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#messageOwnerModal"><span class="glyphicon glyphicon-envelope"></span><br><br>Message Owner</button>
 
 		  								<!-- Modal -->
 									<div id="messageOwnerModal" class="modal fade" role="dialog">
@@ -118,8 +118,8 @@
 		  						</td>
 		  					</tr>
 		  					<tr>
-		  						<td>
-		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#vet1Modal"><br><br>Vet and Emergency Info</button>
+		  						<td style="text-align: right">
+		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#vet1Modal"><span class="glyphicon glyphicon-plus"></span><br><br>Vet and Emergency Info</button>
 
 									<!-- Modal -->
 									<div id="vet1Modal" class="modal fade" role="dialog">
@@ -203,7 +203,7 @@
 
 		  						</td>
 		  						<td>
-		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#uploadPhotoModal"><br><br>Upload Photo</button>
+		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#uploadPhotoModal"><span class="glyphicon glyphicon-camera"></span><br><br>Upload Photo</button>
 
 		  							<!-- Modal -->
 									<div id="uploadPhotoModal" class="modal fade" role="dialog">
