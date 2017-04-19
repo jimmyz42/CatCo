@@ -19,17 +19,17 @@
 
         var cat_card= $("#Ginger-Sitting")
         console.log(cat_card)
-        cat_card.append('<img src="images/ginger.jpg"/>')
+        cat_card.append('<img src="images/ginger-200-200.png"/>')
         cat_card.append("<h2>Ginger</h2>")
         cat_card.append("<h2>4/7-4/9</h2>")
 
 
-        for(var i=0; i<cats.length; i++) {
+        for(var i=1; i<cats.length; i++) {
           var cat_card = $('<div class="cat_cards col-xs-3" id=' + cats[i].name +' onClick="showModal(\'' + cats[i].name + '-modal\')"></div>').appendTo('#othercats');
           cat_card.append('<img src="' + cats[i].picture +'"/>')
           cat_card.append("<h2>" + cats[i].name + "</h2>")
           cat_card.append("<h2>" + cats[i].dates + "</h2>")
-          }
+        }
         window.showModal = function showModal(id){
           $('#' + id).modal('show');
         }  
