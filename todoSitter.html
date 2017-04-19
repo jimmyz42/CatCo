@@ -46,18 +46,164 @@
 		  				<table>
 		  					<tr>
 		  						<td>
-		  							<button class="btn btn-info glyphicon glyphicon-info-sign modalButton"><br><br>More Info</button>
+		  							<!--<button class="btn btn-info glyphicon glyphicon-info-sign modalButton"><br><br>More Info</button>-->
+
+
+		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#moreInfoModal"><br><br>More Info</button>
+
+									<!-- Modal -->
+									<div id="moreInfoModal" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									      </div>
+									      <div class="row">
+										      <div class="col-sm-6 col-md-6 col-lg-6 modal-body">
+										      	<div>
+										        	<img src='images/ginger.png' class='profileImage'/>
+										        </div>
+										        <div>
+											        <h3>Ginger</h3>
+											        5 Tumbleside Drive<br>
+											        Cambridge, MA 02142
+											    </div>
+										      </div>
+										      <div class="col-sm-6 col-md-6 col-lg-6 modal-body">
+										        Hi! I'm Ginger! I like long walks along the beach and catching mice!<br>
+										        <h4>Personality Type:</h4> Playful
+										        <h4>Favorite Toy:</h4> Gray Mouse
+										        <h4>Normal Behaviors:</h4> Afternoon naps, vomitting around strangers
+										        <h4>Feeding Schedule:</h4> Twice per day, 9am and 6pm, 1 Cup each
+										        <h4>Litter Schedule:</h4> Once per week
+										      </div>
+										  </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
+
 		  						</td>
 		  						<td>
-		  							<button class="btn btn-info glyphicon glyphicon-envelope modalButton"><br><br>Message Owner</button>
+		  							
+		  							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">
+		  								<buttontype="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton"><br><br>Message Owner</button></a>
 		  						</td>
 		  					</tr>
 		  					<tr>
 		  						<td>
-		  							<button class="btn btn-info glyphicon glyphicon-plus modalButton"><br><br>Vet and Emergency Info</button>
+		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#vet1Modal"><br><br>Vet and Emergency Info</button>
+
+									<!-- Modal -->
+									<div id="vet1Modal" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									      </div>
+									      <div class="row">
+										   
+											        <h3>Before you panic...</h3>
+											        <h4>Normal behaviors for Ginger include:</h4><br>
+											        Afternoon naps<br>
+											        Vomitting around strangers<br><br>
+											        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#vet2Modal" data-dismiss="modal">Something Else is Wrong</button>
+
+										  </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
+
+
+									<!-- Modal -->
+									<div id="vet2Modal" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									      </div>
+									      <div class="row">
+										   
+											        <h3>Vet and Emergency Info</h3>
+											        In case of emergency, call the owner at:<br>
+											        (555) 555-5555<br><br>
+											        <h4>The preferred vet for Ginger is:</h4><br>
+											        Perfect Pet Care<br>
+											        123 Cat Avenue<br>
+											        (123) 123-1231<br>
+											        Open until 9pm<br><br>
+											        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#vet3Modal" data-dismiss="modal">More Vets</button>
+
+										  </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
+
+
+									<!-- Modal -->
+									<div id="vet3Modal" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									      </div>
+									      <div class="row">
+										   
+											        <h3>Goes to Google</h3>
+
+										  </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
+
 		  						</td>
 		  						<td>
-		  							<button class="btn btn-info glyphicon glyphicon-camera modalButton"><br><br>Upload Photo</button>
+		  							<button type="button" class="btn btn-info glyphicon glyphicon-info-sign modalButton" data-toggle="modal" data-target="#uploadPhotoModal"><br><br>Upload Photo</button>
+
+		  							<!-- Modal -->
+									<div id="uploadPhotoModal" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									      </div>
+									      <div class="row">
+										   
+											        <h3>Opens documents to pick photo</h3>
+
+										  </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
 		  						</td>
 		  					</tr>
 		  				</table>
