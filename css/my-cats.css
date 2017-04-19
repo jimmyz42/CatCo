@@ -1,0 +1,50 @@
+.navbar {
+	position: relative;
+}
+
+h1 {
+	padding-left: 50px;
+	text-align: left;
+}
+
+h2 {
+	text-align: left;
+	text-indent: 50px;
+	font-size: 30px;
+}
+
+ #yourcats {
+	display: block;
+}
+
+#ginger{
+	padding: 20px;
+	margin: 10px;
+	background-color: white;
+	border: black solid 1px;
+	border-radius: 10px;	
+	width: 90%;
+	margin-left: 65px;
+}
+
+#edit{
+	font-size: 30px;
+	position: absolute;
+	margin-left: 300px;
+	margin-top: -300px;
+}
+
+#request{
+	font-size: 30px;
+	position: absolute;
+	margin-left: 300px;
+	margin-top: -200px;
+}
+
+#sitter{
+	font-size: 30px;
+	position: absolute;
+	margin-left: 300px;
+	margin-top: -200px;
+	text-decoration: underline;
+}
