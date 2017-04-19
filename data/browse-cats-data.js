@@ -7,17 +7,17 @@ cat_data = {
     },
     {
       "name": "Mr. Whiskers",
-      "dates": "4/7-4/9",
+      "dates": "4/17-4/19",
       "picture": "images/ginger.jpg"
     },
     {
-      "name": "Ginger",
-      "dates": "4/7-4/9",
+      "name": "Mr. Whiskers",
+      "dates": "4/17-4/19",
       "picture": "images/ginger.jpg"
     },
     {
-      "name": "Ginger",
-      "dates": "4/7-4/9",
+      "name": "Mr. Whiskers",
+      "dates": "4/17-4/19",
       "picture": "images/ginger.jpg"
     },
     {
