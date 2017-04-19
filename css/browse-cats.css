@@ -1,0 +1,88 @@
+.navbar {
+	position: relative;
+}
+
+h1 {
+	padding-left: 80px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 25px;
+}
+
+h4 {
+	text-align: center;
+	font-size: 25px;
+}
+
+#othercats {
+	padding-left: 80px;
+	display: block;
+}
+
+ #yourcats {
+	padding-left: 80px;
+	display: block;
+}
+
+#yourcats > .cat_cards{
+	border: black solid 10px;
+}
+
+.cat_cards{
+	padding: 20px;
+	margin: 10px;
+	background-color: white;
+	border: black solid 1px;
+	border-radius: 10px;
+	display: flex;
+  	flex-direction: column;
+  	overflow: auto;
+}
+
+#othercats {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+
+#nocats{
+	padding: 20px;
+	margin: 10px;
+	background-color: white;
+	border: black solid 1px;
+	border-radius: 10px;	
+	width: 50%;
+	margin-left: 65px;
+}
+
+.container{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+img{
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.modal-content{
+	margin: 100px;
+}
+
+.profile-table td {
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+#msg {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
