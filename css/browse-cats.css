@@ -86,3 +86,7 @@ img{
     margin-right: auto;
     display: block;
 }
+
+#Ginger {
+  cursor: pointer;
+}

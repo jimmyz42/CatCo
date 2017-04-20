@@ -18,7 +18,7 @@ $(document).ready(function() {
   });
 
   $('#discard-changes-submit').click(function() {
-    window.location.href = 'myCatsRequested.html';
+    window.location.href = 'my-cats-frodo.html';
   });
 
   $('#save-changes-dismiss').click(function() {

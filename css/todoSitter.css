@@ -59,11 +59,6 @@ input[type=checkbox]
   margin-bottom: 20px;
 }
 
-#modalButtonsContainer {
-  width: 75%;
-  margin: 0 auto;
-}
-
 .modalButton {
   height: 150px;
   width: 150px;
@@ -76,7 +71,6 @@ input[type=checkbox]
 }
 
 td {
-  width: 50%;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 20px;
