@@ -32,7 +32,7 @@ post_content = {
     {
       "title": "Super high maintence cat",
       "author": "Rosy",
-      "text": "Guys, if you have a super high maintence cat you should pay the catsitters extra. I was helping out a friend catsit her cat today because she was out of town for an interview, and her cat peed on the carpet three separate times! I can tell you that cleaning up cat pee is not pleasant, and I'm pretty sure I smell like cat pee now. I feel like if you cat requires a lot of extra work to catsit, you should pay at least $2/day extra."
+      "text": "Guys, if you have a super high maintence cat you should pay the catsitters extra. I was helping out a friend catsit her cat today because she was out of town for an interview, and her cat peed on the carpet three separate times! I can tell you that cleaning up cat pee is not pleasant, and I'm pretty sure I smell like cat pee now. I feel like if you cat requires a lot of extra work to catsit, the price you're paying the owner should be at least $2/day extra."
     },
   ],
   "Toys": [

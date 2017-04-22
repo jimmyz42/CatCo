@@ -6,6 +6,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
     <!-- Stylesheets -->
     <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="css/forum.css">
@@ -33,7 +35,17 @@
 
     <!-- Main Content -->
     <div class="container-fluid main">
-      <h1>Forums</h1>
+      <div class="row">
+        <h1>Forums</h1>
+      </div>
+      <div class="row search-list">
+        <div class="col-sm-3">
+          <button class="btn btn-primary btn-block" id="list-all">Show all posts</button>
+        </div>
+        <div class="col-sm-3 col-sm-offset-6">
+          <input class="form-control" id="search" type="text" placeholder="Type here to start searching"></input>
+        </div>
+      </div>
 
     <!-- Example
       <div class="row post-container">

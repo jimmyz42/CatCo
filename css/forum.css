@@ -18,12 +18,12 @@
   float: right;
 }
 
-h1 {
-  text-align: center;
-}
-
 .down-menu {
   float: right;
+}
+
+h1 {
+  text-align: center;
 }
 
 .section-title {
@@ -37,3 +37,10 @@ h1 {
   border-radius: 10px;
 }
 
+.search-list {
+  padding: 20px;
+}
+
+span.list {
+  font: 18pt arial;
+}
