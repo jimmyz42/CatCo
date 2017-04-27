@@ -45,10 +45,6 @@
   margin-top: 5px;
 }
 
-.input-label {
-  font-weight: bold;
-}
-
 .schedule-input {
   width: 60px !important;
 }
@@ -91,6 +87,18 @@
   box-shadow: 0 0 10px #FF9803;
 }
 
+td.input-label {
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+td.input-label-top {
+  font-weight: bold;
+  vertical-align: top;
+}
+
 .editable {
   color: #888;
+  border: 1px solid lightgray;
+  padding: 5px;
 }

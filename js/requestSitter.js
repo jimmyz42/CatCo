@@ -11,8 +11,48 @@ $(document).ready(function() {
       // We're in edit mode, alert the user that they have not saved their changes
       $('#unsaved-changes-modal').modal('show');
     } else {
-      // Mock "submitting" the form by going to a My Cats page with the sitter requested
-      window.location.href = 'my-cats-frodo.html';
+      var valid = true;
+      // Validate non-input fields
+      $('.val-required').each(function() {
+        if (!($(this).text().trim())) {
+          $(this).tooltip({ placement: 'right', title: 'Please enter a value for this field.', trigger: 'manual' });
+          $(this).tooltip('show');
+          valid = false;
+          // Remove tooltip on focus
+          $(this).focus(function() {
+            $(this).tooltip('destroy');
+          });
+        }
+      });
+
+      $('.val-numeric').each(function() {
+        if ($(this).text().trim() && isNaN(parseInt($(this).text(), 10))) {
+          $(this).tooltip({ placement: 'right', title: 'Please enter a number for this field.', trigger: 'manual' });
+          $(this).tooltip('show');
+          valid = false;
+          // Remove tooltip on focus
+          $(this).focus(function() {
+            $(this).tooltip('destroy');
+          });
+        }
+      });
+
+      $('.val-nonnegative').each(function() {
+        if ($(this).text().trim() && !isNaN(parseInt($(this).text(), 10)) && parseFloat($(this).text(), 10) < 0) {
+          $(this).tooltip({ placement: 'right', title: 'Please enter a non-negative number for this field.', trigger: 'manual' });
+          $(this).tooltip('show');
+          valid = false;
+          // Remove tooltip on focus
+          $(this).focus(function() {
+            $(this).tooltip('destroy');
+          });
+        }
+      });
+
+      if (valid) {
+        // Mock "submitting" the form by going to a My Cats page with the sitter requested
+        window.location.href = 'my-cats-frodo.html';
+      }
     }
 
   });
@@ -176,4 +216,19 @@ $(document).ready(function() {
     $('#save-schedule-button').hide();
     $('#save-schedule-button').removeClass('glowing-border');
   });
+
+  // http://jsfiddle.net/vacidesign/ja0tyj0f/
+  $('input[type=file]').change(function() {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+      reader.onload = updateImage;
+      reader.readAsDataURL(this.files[0]);
+    }
+  });
 });
+
+// Update the cat photo with the uploaded photo
+function updateImage(e) {
+  $('#photo').attr('src', e.target.result);
+  $('#photo').attr('width', 200);
+}

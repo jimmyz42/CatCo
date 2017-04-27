@@ -69,7 +69,7 @@
                     <td>$</td>
                     <td>
                       <div class="form-inline">
-                        <input type="number" class="form-control" id="price" required> /day
+                        <input type="number" class="form-control" id="price" min="0" required> /day
                       </div>
                     </td>
                   </tr>
@@ -97,12 +97,12 @@
                       <td class="col text-center">
                         <img id="photo" src="images/ginger-200-200.png" /><br />
                         <!-- http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button -->
-                        <label class="btn btn-info btn-file" id="photo-upload" style="visibility: hidden">
+                        <label class="btn btn-primary btn-file" id="photo-upload" style="visibility: hidden">
                           <span class="glyphicon glyphicon-picture"></span> Upload Photo <input type="file" accept="image/*" style="display:none">
                         </label>
                       </td>
                       <td class="lastcol">
-                        <div id="profile">
+                        <div class="val-required" id="profile">
                           <p>Hi! I'm Ginger. I like long walks along the beach and catching mice.</p>
                           <p>Personality Type: Playful</p>
                           <p>Favorite Toy: Gray Mouse</p>
@@ -116,7 +116,6 @@
                         <hr>
                       </td>
                     </tr>
-                    <!-- <tr><td class="col"></td><td class="lastcol"><hr></td></tr> -->
                     <tr>
                       <td class="col"></td>
                       <td class="lastcol">
@@ -128,13 +127,13 @@
                             <tr>
                               <td class="col input-label">My Phone:</td>
                               <td class="lastcol">
-                                <div id="my-phone">(555) 555-5555</div>
+                                <div class="val-required" id="my-phone">(555) 555-5555</div>
                               </td>
                             </tr>
                             <tr>
                               <td class="col input-label">My Email:</td>
                               <td class="lastcol">
-                                <div id="my-email">c4tzrprecious@meow.com</div>
+                                <div class="val-required" id="my-email">c4tzrprecious@meow.com</div>
                               </td>
                             </tr>
                             <tr>
@@ -146,20 +145,20 @@
                             <tr>
                               <td class="col input-label">Name:</td>
                               <td class="lastcol">
-                                <div id="vet-name">Purrfect Pet Care</div>
+                                <div class="val-required" id="vet-name">Purrfect Pet Care</div>
                               </td>
                             </tr>
                             <tr>
-                              <td class="col input-label">Address:</td>
+                              <td class="col input-label-top">Address:</td>
                               <td class="lastcol">
-                                <div id="vet-address-1">123 Cat Ave</div>
-                                <div id="vet-address-2">Boston, MA</div>
+                                <div class="val-required" id="vet-address-1">123 Cat Ave</div>
+                                <div class="val-required" id="vet-address-2">Boston, MA</div>
                               </td>
                             </tr>
                             <tr>
                               <td class="col input-label">Phone:</td>
                               <td class="lastcol">
-                                <div id="vet-phone">(123) 123-1231</div>
+                                <div class="val-required" id="vet-phone">(123) 123-1231</div>
                               </td>
                             </tr>
                           </tbody>
@@ -187,7 +186,7 @@
                     <tr>
                       <td class="input-label">Feed:</td>
                       <td>
-                        <span id="feed">2</span> time(s)/<span id="feed-units">day</span>
+                        <span class="val-required val-numeric val-nonnegative" id="feed">2</span> time(s)/<span id="feed-units">day</span>
                         <select id="edit-feed-units" style="display:none">
                           <option selected="selected">day</option>
                           <option>week</option>
@@ -197,7 +196,7 @@
                     <tr>
                       <td class="input-label">Play:</td>
                       <td>
-                        <span id="play">1</span> time(s)/<span id="play-units">day</span>
+                        <span class="val-required val-numeric val-nonnegative" id="play">1</span> time(s)/<span id="play-units">day</span>
                         <select id="edit-play-units" style="display:none">
                           <option selected="selected">day</option>
                           <option>week</option>
@@ -207,7 +206,7 @@
                     <tr>
                       <td class="input-label">Water:</td>
                       <td>
-                        <span id="water">1</span> time(s)/<span id="water-units">day</span>
+                        <span class="val-required val-numeric val-nonnegative" id="water">1</span> time(s)/<span id="water-units">day</span>
                         <select id="edit-water-units" style="display:none">
                           <option selected="selected">day</option>
                           <option>week</option>
@@ -217,7 +216,7 @@
                     <tr>
                       <td class="input-label">Litter:</td>
                       <td>
-                        <span id="litter">1</span> time(s)/<span id="litter-units">week</span>
+                        <span class="val-required val-numeric val-nonnegative" id="litter">1</span> time(s)/<span id="litter-units">week</span>
                         <select id="edit-litter-units" style="display:none">
                           <option>day</option>
                           <option selected="selected">week</option>
@@ -227,7 +226,7 @@
                   </tbody>
                 </table>
                 <h3>Special Care Notes:</h3>
-                <div id="special-care"><p>If you get the chance, please take Ginger on a long walk at the beach. Ginger loves it.</p></div>
+                <div class="val-required" id="special-care"><p>If you get the chance, please take Ginger on a long walk at the beach. Ginger loves it.</p></div>
               </div>
             </div>
           </div>
@@ -253,8 +252,8 @@
             <p>If you continue now, the changes you made to your cat's profile and schedule will NOT be saved. Do you want to request a catsitter anyways?</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="save-changes-dismiss" data-dismiss="modal">Nevermind, I want to save my changes</button>
-            <button type="button" class="btn btn-warning" id="discard-changes-submit">Discard my changes and request a catsitter</button>
+            <button type="button" class="btn btn-success" id="save-changes-dismiss" data-dismiss="modal">Nevermind, I want to save my changes</button>
+            <button type="button" class="btn btn-danger" id="discard-changes-submit">Discard my changes and request a catsitter</button>
           </div>
         </div>
       </div>
