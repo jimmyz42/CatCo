@@ -37,10 +37,14 @@
 
     <!-- Main page content -->
     <div class="container-fluid main form-inline">
-      <div class="row">
-        <h1>Request a Catsitter</h1>
-      </div>
       <form>
+        <div class="row">
+          <h1><span>Request a Catsitter for Ginger</span>
+            <span class="pull-right">
+              <button class="btn btn-lg btn-success request-button" type="submit"><span class="glyphicon glyphicon-plus"></span> Request Catsitter</button>
+            </span>
+          </h1>
+        </div>
         <div class="row">
           <div class="col-md-12">
             <div class="section-header edit-header">
@@ -54,7 +58,7 @@
                     <td></td>
                     <td>
                       <div class="form-inline">
-                        <input type="text" class="form-control" id="datepicker-start" required>
+                        <input type="text" class="form-control" id="datepicker-start" data-toggle="tooltip" data-placement="bottom" data-trigger="manual" title="Start date must not come after end date." required>
                         to
                         <input type="text" class="form-control" id="datepicker-end" required>
                       </div>
@@ -82,7 +86,7 @@
               <div class="section-header">
                 <h2 class="edit-header">Profile and Contact</h2>
                 <span class="pull-right">
-                  <button class="btn btn-info" type="button" id="edit-profile-button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <button class="btn btn-primary" type="button" id="edit-profile-button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
                   <button class="btn btn-success" type="button" id="save-profile-button" style="display:none"><span class="glyphicon glyphicon-ok"></span> Save Edits</button>
                 </span>
               </div>
@@ -173,7 +177,7 @@
               <div class="section-header">
                 <h2 class="edit-header">Care Schedule</h2>
                 <span class="pull-right">
-                  <button class="btn btn-info" type="button" id="edit-schedule-button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <button class="btn btn-primary" type="button" id="edit-schedule-button"><span class="glyphicon glyphicon-edit"></span> Edit</button>
                   <button class="btn btn-success" type="button" id="save-schedule-button" style="display:none"><span class="glyphicon glyphicon-ok"></span> Save Edits</button>
                 </span>
               </div>

@@ -11,10 +11,28 @@ $(document).ready(function() {
       // We're in edit mode, alert the user that they have not saved their changes
       $('#unsaved-changes-modal').modal('show');
     } else {
-      // Mock "submitting" the form by going to a My Cats page with the sitter requested
-      window.location.href = 'my-cats-frodo.html';
+      // Validate dates
+      var startDate = new Date($('#datepicker-start').val());
+      var endDate = new Date($('#datepicker-end').val());
+
+      if (startDate > endDate){
+        // Enforce that start date cannot be after end date
+        $('#datepicker-start').addClass('glowing-border');
+        $('#datepicker-end').addClass('glowing-border');
+        $('#datepicker-start').tooltip('show');
+      } else {
+        // Mock "submitting" the form by going to a My Cats page with the sitter requested
+        window.location.href = 'my-cats-frodo.html';
+      }
+
     }
 
+  });
+
+  $('#datepicker-start, #datepicker-end').click(function() {
+    $('#datepicker-start').removeClass('glowing-border');
+    $('#datepicker-end').removeClass('glowing-border');
+    $('#datepicker-start').tooltip('hide');
   });
 
   $('#discard-changes-submit').click(function() {

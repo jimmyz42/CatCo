@@ -16,3 +16,8 @@ img.logo {
   top: 5px;
   height: 40px;
 }
+
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
