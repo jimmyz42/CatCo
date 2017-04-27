@@ -11,28 +11,24 @@ $(document).ready(function() {
       // We're in edit mode, alert the user that they have not saved their changes
       $('#unsaved-changes-modal').modal('show');
     } else {
-      // Validate dates
-      var startDate = new Date($('#datepicker-start').val());
-      var endDate = new Date($('#datepicker-end').val());
-
-      if (startDate > endDate){
-        // Enforce that start date cannot be after end date
-        $('#datepicker-start').addClass('glowing-border');
-        $('#datepicker-end').addClass('glowing-border');
-        $('#datepicker-start').tooltip('show');
-      } else {
-        // Mock "submitting" the form by going to a My Cats page with the sitter requested
-        window.location.href = 'my-cats-frodo.html';
-      }
-
+      // Mock "submitting" the form by going to a My Cats page with the sitter requested
+      window.location.href = 'my-cats-frodo.html';
     }
 
   });
 
-  $('#datepicker-start, #datepicker-end').click(function() {
-    $('#datepicker-start').removeClass('glowing-border');
-    $('#datepicker-end').removeClass('glowing-border');
-    $('#datepicker-start').tooltip('hide');
+  $('#datepicker-start, #datepicker-end').change(function() {
+    // Update restricted date ranges in other field
+    if ($('#datepicker-start').val()) {
+      $('#datepicker-end').datepicker('option', 'minDate', new Date($('#datepicker-start').val()));
+    } else {
+      $('#datepicker-end').datepicker('option', 'minDate', null);
+    }
+    if ($('#datepicker-end').val()) {
+      $('#datepicker-start').datepicker('option', 'maxDate', new Date($('#datepicker-end').val()));
+    } else {
+      $('#datepicker-start').datepicker('option', 'maxDate', null);
+    }
   });
 
   $('#discard-changes-submit').click(function() {
