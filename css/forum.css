@@ -35,6 +35,7 @@ h1 {
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
+  overflow: auto;
 }
 
 .search-list {
@@ -43,4 +44,18 @@ h1 {
 
 span.list {
   font: 18pt arial;
+}
+
+.add-post {
+  float: right;
+  margin-top: 20px;
+}
+
+.post-title, .post-body {
+  margin-bottom: 10px;
+}
+
+.post-cancel, .post-submit {
+  float: right;
+  margin-left: 10px;
 }

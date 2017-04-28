@@ -1,3 +1,5 @@
+var post_content = JSON.parse(window.sessionStorage.getItem('posts'));
+
 $(function() {
 
   showContent();
@@ -35,8 +37,6 @@ $(function() {
   function showContent() {
         var section_cnt = 0;
         for(section_name in post_content) {
-          section_cnt++;
-
           var container = $('<div class="row post-container"></div>').appendTo('.main');
           var section = $('<div class="col-sm-12 section"></div>').appendTo(container);
           var header = $('<div data-toggle="collapse" data-target="#section' + section_cnt + '"></div>').appendTo(section);
@@ -51,6 +51,9 @@ $(function() {
             post.append('<span class="author">' + posts[i].author + '</span>');
             post.append('<br><p>' + posts[i].text + '</p>');
           }
+          
+          post_container.append('<button class="btn btn-default add-post" section="' +section_cnt + '"><span class="glyphicon glyphicon-plus"></span> Add Post</button>');
+          section_cnt++; 
         }
 
       $('.collapse').on('show.bs.collapse', function() {
@@ -63,3 +66,50 @@ $(function() {
       });
   }
 });
+
+$(document).on('click', '.add-post', function() {
+  var section = $(this).attr('section');
+  var post_container = $('#section' + section);
+  var post = $('<div class="post"></div>').appendTo(post_container); 
+  var post_title = $('<input type="text" class="form-control post-title" placeholder="Post Title"></input>').appendTo(post);
+  var post_body = $('<textarea class="form-control post-body" rows="5" placeholder="Post Content"></textarea>').appendTo(post);
+  var post_cancel = $('<button class="btn btn-danger post-cancel"><span class="glyphicon glyphicon-remove"></span> Cancel</button>').appendTo(post);
+  var post_submit = $('<button class="btn btn-success post-submit"><span class="glyphicon glyphicon-ok"></span> Post!</button>').appendTo(post);
+
+  post_cancel.click(function() {
+    post_container.append('<button class="btn btn-default add-post" section="' + this.section + '"><span class="glyphicon glyphicon-plus"></span> Add Post</button>');
+    post.remove();
+  }.bind( {section: section} ));
+
+  post_submit.click(function() {
+    var newpost_obj = {
+      title: post_title.val(),
+      author: window.sessionStorage.getItem('name'),
+      text: post_body.val(),
+    };
+    post_content[Object.keys(post_content)[this.section]].push(newpost_obj);
+    window.sessionStorage.setItem('posts', JSON.stringify(post_content));
+
+    var newpost = $('<div class="post"></div>').appendTo(post_container);
+    newpost.append('<span class="title">' + newpost_obj.title + '</span>');
+    newpost.append('<span class="author">' + newpost_obj.author + '</span>');
+    newpost.append('<br><p>' + newpost_obj.text + '</p>');
+
+    post_container.append('<button class="btn btn-default add-post" section="' + this.section + '"><span class="glyphicon glyphicon-plus"></span> Add Post</button>');
+    post.remove();
+  }.bind( {section: section }));
+
+  $(this).remove();
+});
+
+
+
+
+
+
+
+
+
+
+
+
