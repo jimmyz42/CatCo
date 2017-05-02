@@ -7,12 +7,23 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <!--<script>
+    	function clicked(id)
+		{
+		  console.log('inside clicked');
+		  var box = document.getElementById(id);
+		  if (box.checked==true) { sitterSide(id, 'add'); }
+		  else { sitterSide(id, 'remove'); }
+		}
+    </script>-->
+
     <link href="css/main.css" rel="stylesheet">
 		<link href="css/todoSitter.css" rel="stylesheet">
 
 		<title>CatCo</title>
   </head>
   <body>
+  		<script src="js/todos.js"></script>
 	    <!-- Navbar -->
 	    <nav class="navbar navbar-default navbar-fixed-top">
 	      <div class="container-fluid">
@@ -240,27 +251,27 @@
 	  					
 	  					<div class="checkbox">
 				          <label>
-				            <input type="checkbox" value="">
+				            <input type="checkbox" value="" id="item1" onclick="clicked('item1')"">
 				            <!--<span class="cr"><i class="cr-icon fa fa-check"></i></span>-->
 				            Feed 1 cup, 9am
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="">
+				            <input type="checkbox" value="" id="item2">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Fill water bowl
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="">
+				            <input type="checkbox" value="" id="item3">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Play with Ginger
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="">
+				            <input type="checkbox" value="" id="item4">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Feed 1 cup, 6pm
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="">
+				            <input type="checkbox" value="" id="item5">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Clean litter box
 				          </label><br>

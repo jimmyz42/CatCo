@@ -6,6 +6,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+
 
     <link href="css/main.css" rel="stylesheet">
 		<link href="css/todoOwner.css" rel="stylesheet">
@@ -13,6 +15,13 @@
 		<title>CatCo</title>
   </head>
   <body>
+  <script src="js/todos.js"></script>
+  <script>
+      	$(document).ready(function() {
+    		console.log( "ready!" );
+    		ownerSide();
+		});
+  </script>
 	    <!-- Navbar -->
 	    <nav class="navbar navbar-default navbar-fixed-top">
 	      <div class="container-fluid">
@@ -60,27 +69,27 @@
 	  					<h4>Below you can see what Frodo has done today to care for Ginger.</h4>
 		  				<div class="checkbox">
 				          <label>
-				            <input type="checkbox" value="" disabled>
+				            <input type="checkbox" value="" disabled id="item1">
 				            <!--<span class="cr"><i class="cr-icon fa fa-check"></i></span>-->
 				            Feed 1 cup, 9am
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" checked disabled>
+				            <input type="checkbox" value="" disabled id="item2">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Fill water bowl
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" disabled>
+				            <input type="checkbox" value="" disabled id="item3">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Play with Ginger
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" disabled>
+				            <input type="checkbox" value="" disabled id="item4">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Feed 1 cup, 6pm
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" disabled>
+				            <input type="checkbox" value="" disabled id="item5">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Clean litter box
 				          </label><br>
