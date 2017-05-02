@@ -4,7 +4,7 @@ function sitterSide(item, action) {
 		checkedItems.push(item);
 	}
 	if (action=="remove") {
-		checkedItem.remove(item);
+		checkedItems.pop(item);
 	}
 	console.log(checkedItems);
 }
