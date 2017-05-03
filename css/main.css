@@ -9,6 +9,8 @@ html, body, .main {
 
 .main {
   padding-top: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 img.logo {
@@ -20,4 +22,9 @@ img.logo {
 .navbar {
   background-color: white;
   border-bottom: 1px solid lightgray;
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  background-color: white;
 }
