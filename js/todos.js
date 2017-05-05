@@ -23,3 +23,4 @@ function clicked(id)
 		  if (box.checked==true) { sitterSide(id, 'add'); }
 		  else { sitterSide(id, 'remove'); }
 		}
+

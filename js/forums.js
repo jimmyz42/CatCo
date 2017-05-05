@@ -1,13 +1,9 @@
 if(window.sessionStorage.getItem('posts') === null) {
   window.sessionStorage.setItem('posts', JSON.stringify(original_post_content));
 }
-if(window.sessionStorage.getItem('name') === null) {
-  window.sessionStorage.setItem('name', 'Anonymous');
-}
 var post_content = JSON.parse(window.sessionStorage.getItem('posts'));
 
 $(function() {
-
   showContent();
 
   $('#list-all').click(function() {

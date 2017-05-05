@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- Stylesheets -->
+    <script src="js/names.js"></script>
     <script src="data/browse-cats-data.js"></script>
     <script>
       $(function() {
+
         var cats = cat_data['cats'];
         for(var i=0; i<cats.length; i++) {
           var cat_card = $('<div class="cat_cards col-xs-3" id=' + cats[i].name +' onClick="showModal(' + i + ')"></div>').appendTo('#othercats');
@@ -127,7 +129,7 @@
                     <tr>
                       <td class="col text-center">
                         <img id="photo" src="images/ginger-200-200.png" /><br />
-                        <a href="cattsitting-ginger.html">
+                        <a href="catsitting-ginger.html">
                             <button type="button" class="btn btn-info" id="msg">Message Owner</button>
                         </a>
                       </td>
