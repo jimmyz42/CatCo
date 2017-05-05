@@ -72,7 +72,9 @@ img{
 }
 
 .modal-content{
-	margin: 100px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;	
 }
 
 .profile-table td {

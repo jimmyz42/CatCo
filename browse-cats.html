@@ -18,13 +18,21 @@
       $(function() {
         var cats = cat_data['cats'];
         for(var i=0; i<cats.length; i++) {
-          var cat_card = $('<div class="cat_cards col-xs-3" id=' + cats[i].name +' onClick="showModal(\'' + cats[i].name + '-modal\')"></div>').appendTo('#othercats');
+          var cat_card = $('<div class="cat_cards col-xs-3" id=' + cats[i].name +' onClick="showModal(' + i + ')"></div>').appendTo('#othercats');
           cat_card.append('<img src="' + cats[i].picture +'"/>')
           cat_card.append("<h2>" + cats[i].name + "</h2>")
           cat_card.append("<h2>" + cats[i].dates + "</h2>")
           }
-        window.showModal = function showModal(id){
-          $('#' + id).modal('show');
+        window.showModal = function showModal(index){
+          $('.cat-name').html(cats[index].name);
+          $('#photo').attr('src', cats[index].picture);
+          $('#cat-modal').modal('show');
+          if (index!=0){
+            $('#msg').attr('disabled', true)
+          }
+          else{
+            $('#msg').attr('disabled', false)
+          }
         }  
       });
 
@@ -90,7 +98,10 @@
       </div>
     </div>
 
-  <div class="modal fade" id="Ginger-modal" role="dialog">
+
+
+
+  <div class="modal fade" id="cat-modal" role="dialog">
     <div class="modal-dialog"></div>
     <div class="modal-content">
       <div class="modal-header">
@@ -116,14 +127,13 @@
                     <tr>
                       <td class="col text-center">
                         <img id="photo" src="images/ginger-200-200.png" /><br />
-                        <!-- http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button -->
                         <a href="cattsitting-ginger.html">
                             <button type="button" class="btn btn-info" id="msg">Message Owner</button>
                         </a>
                       </td>
                       <td class="lastcol">
                         <div id="profile">
-                          <h3 style="margin-top: 0">Hi! I'm Ginger.</h3>
+                          <h3 style="margin-top: 0">Hi! I'm <span class="cat-name">Ginger</span>.</h3>
                           <p>I like long walks along the beach and catching mice.</p>
                           <p>Personality Type: Playful</p>
                           <p>Favorite Toy: Gray Mouse</p>
