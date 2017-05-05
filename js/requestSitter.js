@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  $('#datepicker-start').datepicker();
-  $('#datepicker-end').datepicker();
+  $('#datepicker-start').datepicker({ minDate: 0 });
+  $('#datepicker-end').datepicker({ minDate: 0 });
 
   $('#unsaved-changes-modal').modal({ show: false });
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
     if ($('#datepicker-start').val()) {
       $('#datepicker-end').datepicker('option', 'minDate', new Date($('#datepicker-start').val()));
     } else {
-      $('#datepicker-end').datepicker('option', 'minDate', null);
+      $('#datepicker-end').datepicker('option', 'minDate', 0);
     }
     if ($('#datepicker-end').val()) {
       $('#datepicker-start').datepicker('option', 'maxDate', new Date($('#datepicker-end').val()));
