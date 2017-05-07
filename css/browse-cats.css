@@ -12,7 +12,6 @@ h2 {
 }
 
 h4 {
-	text-align: center;
 	font-size: 25px;
 }
 
@@ -24,6 +23,11 @@ h4 {
  #yourcats {
 	padding-left: 80px;
 	display: block;
+}
+
+#search {
+	width: 40%;
+	margin-bottom: 15px;
 }
 
 #yourcats > .cat_cards{
@@ -38,7 +42,7 @@ h4 {
 	border-radius: 10px;
 	display: flex;
   	flex-direction: column;
-  	overflow: auto;
+	word-wrap: break-word;
 }
 
 #othercats {
@@ -49,14 +53,9 @@ h4 {
   flex-wrap: wrap;
 }
 
-#nocats{
-	padding: 20px;
-	margin: 10px;
-	background-color: white;
-	border: black solid 1px;
-	border-radius: 10px;	
-	width: 50%;
-	margin-left: 65px;
+#browsecats{
+	text-align: left;
+	margin-left: 20px;
 }
 
 .container{
@@ -73,7 +72,9 @@ img{
 }
 
 .modal-content{
-	margin: 100px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;	
 }
 
 .profile-table td {
@@ -89,4 +90,20 @@ img{
 
 #Ginger {
   cursor: pointer;
+}
+
+.ui-datepicker{
+    margin-top: 250px;
+}
+
+.form-inline{
+	margin-left: 20px;
+}
+
+.datepicker{
+	width: 40%;
+}
+
+.btn-primary{
+	margin: 10px;
 }

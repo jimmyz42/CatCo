@@ -11,6 +11,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="css/forum.css">
     <link rel="stylesheet" href="css/my-cats.css">
+    <script src="js/names.js"></script>
   </head>
 
 
@@ -36,34 +37,37 @@
       </div>
     </nav>
 
+    <div class="container-fluid main form-inline">
+      <div class="row">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+          <li><a href="choose.html">Choose User Mode</a></li>
+          <li class="active">My Cats</li>
+        </ol>
+      </div>
+
+      <div class="row">
+        <h1>My Cats</h1>
+        <div id="yourcats">
+          <div id="ginger">
+            <img src="images/ginger-200-200.png"/>
+            <h2>Ginger</h2>
+            <h2>4/7-4/9</h2>
 
 
-    <div>
-      <h1>My Cats</h1>
-      <div id="yourcats">
-        <div id="ginger">
-          <img src="images/ginger-200-200.png"/>
-          <h2>Ginger</h2>
-          <h2>4/7-4/9</h2>
-
-
-          <button class="btn btn-info" type="button" id="edit">
-            <span class="glyphicon glyphicon-edit"></span> Edit Cat Profile
-          </button>
-
-          <a href="todoOwner.html">
-            <button class="btn btn-info" type="button" id="sitter">
-              Being Cared for by Frodo
+            <button class="btn btn-info" type="button" id="edit">
+              <span class="glyphicon glyphicon-edit"></span> Edit Cat Profile
             </button>
-          </a>
 
+            <a href="todoOwner.html">
+              <button class="btn btn-info" type="button" id="sitter">
+                Being Cared for by Frodo
+              </button>
+            </a>
+
+          </div>
         </div>
       </div>
     </div>
 
-
-
-
-
-
-    </html>
+</html>

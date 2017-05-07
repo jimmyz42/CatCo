@@ -1,9 +1,4 @@
-.navbar {
-	position: relative;
-}
-
 h1 {
-	padding-left: 50px;
 	text-align: left;
 }
 
@@ -19,12 +14,11 @@ h2 {
 
 #ginger{
 	padding: 20px;
-	margin: 10px;
+	margin: 10px auto;
 	background-color: white;
 	border: black solid 1px;
 	border-radius: 10px;	
 	width: 90%;
-	margin-left: 65px;
 }
 
 #edit{

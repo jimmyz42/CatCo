@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,20 +6,18 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
     <!-- Stylesheets -->
     <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="css/forum.css">
-    <link rel="stylesheet" href="css/my-cats.css">
+
     <script src="js/names.js"></script>
+    <script src="data/posts.js"></script>
+    <script src="js/forums.js"></script>
   </head>
-
-
-
-
-
-
-
- <!-- Navbar copied from Jimmy-->  
+  <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -37,37 +34,48 @@
       </div>
     </nav>
 
-    <div class="container-fluid main form-inline">
+    <!-- Main Content -->
+    <div class="container-fluid main">
       <div class="row">
         <!-- Breadcrumbs -->
         <ol class="breadcrumb">
           <li><a href="choose.html">Choose User Mode</a></li>
-          <li class="active">My Cats</li>
+          <li><a href="my-cats.html">My Cats</a></li>
+          <li><a href="requestSitter.html">Request Catsitter</a></li>
+          <li class="active">Forums</li>
         </ol>
       </div>
 
       <div class="row">
-        <h1>My Cats</h1>
-        <div id="yourcats">
-          <div id="ginger">
-            <img src="images/ginger-200-200.png"/>
-            <h2>Ginger</h2>
-            <h2>4/7-4/9</h2>
+        <h1>Forums</h1>
+      </div>
+      <div class="row search-list">
+        <div class="col-sm-3">
+          <button class="btn btn-primary btn-block" id="list-all">Show all posts</button>
+        </div>
+        <div class="col-sm-3 col-sm-offset-6">
+          <input class="form-control" id="search" type="text" placeholder="Type here to start searching"></input>
+        </div>
+      </div>
 
-
-            <button class="btn btn-info" type="button" id="edit">
-              <span class="glyphicon glyphicon-edit"></span> Edit Cat Profile
-            </button>
-
-            <a href="requestSitter.html">
-              <button class="btn btn-info" type="button" id="request">
-                <img src="images/cat.svg" height="36" /> Request Catsitter
-              </button>
-            </a>
-
+    <!-- Example
+      <div class="row post-container">
+        <div class="col-sm-12 section">
+          <span class="section-title">Section</span>
+          <button class="down-menu btn btn-xs btn-default" data-toggle="collapse" data-target="#sectionN">
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </button>
+          <div class="panel-collapse collapse" id="sectionN">
+            <div class="post">
+              hi
+            </div>
           </div>
         </div>
       </div>
+    -->
+
     </div>
 
+    <!-- Modal -->
+  </body>
 </html>
