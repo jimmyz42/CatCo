@@ -30,7 +30,9 @@
 				console.log(JSON.parse(window.sessionStorage.getItem('todo-items')));
 				checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
 				for (i=0; i < checkedItems.length; i++) {
+					console.log(checkedItems[i])
 					console.log($('#'+checkedItems[i]));
+					console.log(document.getElementById(checkedItems[i]))
 					$('#'+checkedItems[i]).attr('checked','true');// = true;//,'true');
 				}
 			}
@@ -162,7 +164,7 @@
 									      <div class="modal-header">
 									        <button type="button" class="close" data-dismiss="modal">&times;</button>
 									      </div>
-									      <div class="row">
+									      <div class="modal-row">
 										   
 											        <h3>Before you panic...</h3>
 											        <h4>Normal behaviors for Ginger include:</h4><br>
@@ -189,7 +191,7 @@
 									      <div class="modal-header">
 									        <button type="button" class="close" data-dismiss="modal">&times;</button>
 									      </div>
-									      <div class="row">
+									      <div class="modal-row">
 										   
 											        <h3>Vet and Emergency Info</h3>
 											        In case of emergency, call the owner at:<br>

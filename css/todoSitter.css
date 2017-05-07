@@ -80,3 +80,7 @@ td {
 table {
   margin: auto;
 }
+
+.modal-row {
+  margin-left: 20px;
+}
