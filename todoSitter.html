@@ -23,7 +23,27 @@
 		<title>CatCo</title>
   </head>
   <body>
-  		<script src="js/todos.js"></script>
+  		<script >
+  			var checkedItems = [];
+			if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
+				console.log(JSON.parse(window.sessionStorage.getItem('todo-items')));
+				checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
+				for (i=0; i < checkedItems.length; i++) {
+					console.log($('#'+checkedItems[i]));
+					$('#'+checkedItems[i]).attr('checked','true');// = true;//,'true');
+				}
+			}
+			
+			$(function() {
+				$('.todo-item').click(function() {
+					var box = document.getElementById($(this).attr('id'));
+					if (box.checked==true) { checkedItems.push(box.id); }
+					else { checkedItems.pop(box.id); }
+					//checkedItems.push($(this).attr('id'));
+					window.sessionStorage.setItem('todo-items', JSON.stringify(checkedItems));
+				});
+			});
+  		</script>
 	    <!-- Navbar -->
 	    <nav class="navbar navbar-default navbar-fixed-top">
 	      <div class="container-fluid">
@@ -251,27 +271,27 @@
 	  					
 	  					<div class="checkbox">
 				          <label>
-				            <input type="checkbox" value="" id="item1" onclick="clicked('item1')"">
+				            <input class="todo-item" type="checkbox" value="" id="item1">
 				            <!--<span class="cr"><i class="cr-icon fa fa-check"></i></span>-->
 				            Feed 1 cup, 9am
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" id="item2">
+				            <input class="todo-item" type="checkbox" value="" id="item2">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Fill water bowl
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" id="item3">
+				            <input class="todo-item" type="checkbox" value="" id="item3">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Play with Ginger
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" id="item4">
+				            <input class="todo-item" type="checkbox" value="" id="item4">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Feed 1 cup, 6pm
 				          </label><br>
 				          <label>
-				            <input type="checkbox" value="" id="item5">
+				            <input class="todo-item" type="checkbox" value="" id="item5">
 				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
 				            Clean litter box
 				          </label><br>

@@ -1,10 +1,10 @@
-var checkedItems = [];
+
 function sitterSide(item, action) {
 	if (action=="add") {
-		checkedItems.push(item);
+		
 	}
 	if (action=="remove") {
-		checkedItems.pop(item);
+		
 	}
 	console.log(checkedItems);
 }
@@ -23,3 +23,18 @@ function clicked(id)
 		  if (box.checked==true) { sitterSide(id, 'add'); }
 		  else { sitterSide(id, 'remove'); }
 		}
+
+//cat sitter side
+var checkedItems = [];
+if(window.sessionStorage.getItem('todo-items') !== null) {
+	checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
+}
+$(function() {
+	$('.todo-item').click(function() {
+		var box = document.getElementById(id);
+		if (box.checked==true) { checkedItems.push(item); }
+		else { checkedItems.pop(item); }
+		//checkedItems.push($(this).attr('id'));
+		window.sessionStorage.setItem('todo-items', JSON.stringify(checkedItems));
+	});
+});
