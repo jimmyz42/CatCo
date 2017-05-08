@@ -1,9 +1,5 @@
-.navbar {
-	position: relative;
-}
-
 h1 {
-	padding-left: 80px;
+	/*padding-left: 80px;*/
 }
 
 h2 {
@@ -15,12 +11,12 @@ h4 {
 	font-size: 25px;
 }
 
-#othercats {
-	padding-left: 80px;
-	display: block;
+.inner-align {
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
- #yourcats {
+#othercats {
 	padding-left: 80px;
 	display: block;
 }
@@ -64,12 +60,12 @@ h4 {
 	display: block;
 }
 
-img{
+/*img{
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-}
+}*/
 
 .modal-content{
 	width: 60%;
@@ -114,5 +110,31 @@ img{
 
 .cat-imgicon {
   height: 20px;
+  display: inline;
+}
+
+.cat-card {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.cat-card:hover {
+  background-color: #e6e6e6;
+}
+
+.cat-link {
+  color: inherit;
+}
+
+.cat-link:hover {
+  color: inherit;
+}
+
+#browse-other {
   display: inline;
 }
