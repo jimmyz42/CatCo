@@ -48,7 +48,7 @@
 
       <div class="row browse-controls">
         <h1>Browse Cats</h1>
-        <h4>Click on a cat to see more info and to message an owner.</h4>
+        <h4>Click on a cat to see more info and to sign up to catsit a cat.</h4>
 
         <form id="search-name-form" class="form-inline">
           <input type="text" class="form-control" id="cat-name" placeholder="Search for cat by name" required />
@@ -66,6 +66,11 @@
       <div class="row inner-align cat-results">
         <!-- Cat results here -->
       </div>
+      <div class="row inner-align text-center" id="no-results">
+        <img src="images/sad_cat.png" />
+        <h4>Sorry, we couldn't find any cats!</h4>
+        <h4>Please change your search settings and try again.</h4>
+      </div>
     </div>
 
   <div class="modal fade" id="cat-modal" role="dialog">
@@ -82,7 +87,7 @@
                 <td class="col text-center">
                   <img id="photo" src="images/ginger-200-200.png" /><br />
                   <a href="catsitting-ginger.html">
-                      <button type="button" class="btn btn-info" id="msg"><img src="images/cat.svg" class="cat-imgicon" /> Catsit This Cat</button>
+                    <button type="button" class="btn btn-info" id="msg"><img src="images/cat.svg" class="cat-imgicon" /> Catsit This Cat</button>
                   </a>
                 </td>
                 <td class="lastcol">
@@ -98,16 +103,10 @@
                     </ul>
                     <p>Feed 1 cup per meal.</p>
                   </div>
-                </td>
-              </tr>
-              <!-- <tr><td class="col"></td><td class="lastcol"><hr></td></tr> -->
-              <tr>
-                <td class="col"></td>
-                <td class="lastcol">
                   <table class="contact-table">
                     <tbody>
                       <tr>
-                        <td colspan="2" class="lastcol"><h3 style="margin-top: 0">My Contact Info</h3></td>
+                        <td colspan="2" class="lastcol"><h3 style="margin-top: 12px">My Contact Info</h3></td>
                       </tr>
                       <tr>
                         <td class="col input-label">My Phone:</td>
@@ -120,8 +119,6 @@
                         <td class="lastcol">
                           <div id="my-email">c4tzrprecious@meow.com</div>
                         </td>
-                      </tr>
-                      <tr>
                       </tr>
                       <tr>
                         <td colspan="2" class="lastcol"><h3>Preferred Vet Contact</h3></td>
