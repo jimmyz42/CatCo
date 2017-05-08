@@ -1,18 +1,27 @@
-var cats;
-
 $(document).ready(function() {
   // Populate cat cards
-  cats = cat_data['cats'];
+  var cats = cat_data['cats'];
 
-  var indices = [];
-  for (var i = 0; i < cats.length; i++) {
-    indices.push(i);
-  }
-  showCats(indices);
+  showCats(cats);
 
   // Set up datepicker
   $('#datepicker-start').datepicker();
   $('#datepicker-end').datepicker();
+
+  $('#search-name').click(function(e) {
+    e.preventDefault();
+    var myCats = cats.filter(function(cat) {
+      return cat.name.toLowerCase() === $('#cat-name').val();
+    });
+    showCats(myCats);
+  });
+  $('#search-dates').click(function(e) {
+    e.preventDefault();
+    var myCats = cats.filter(function(cat) {
+      return Date.parse($('#datepicker-start').val()) <= cat.start && cat.end <= Date.parse($('#datepicker-end').val());
+    });
+    showCats(myCats);
+  });
 });
 
 function showModal(index) {
@@ -27,21 +36,20 @@ function showModal(index) {
   }
 };
 
-function showCats(indices) {
+function showCats(myCats) {
   $('.cat-results').empty();
 
-  var catCard;
-  for (var i = 0; i < indices.length; i++) {
-    catCard = $(
-      '<div class="cat-card" id="' + cats[i].id + '" onClick="showModal(' + i + ')">' + 
+  for (var i = 0; i < myCats.length; i++) {
+    var catCard = $(
+      '<div class="cat-card" id="' + myCats[i].id + '" onClick="showModal(' + i + ')">' + 
         '<div class="cat-image">' +
-          '<img src="' + cats[i].picture + '" />' +
+          '<img src="' + myCats[i].picture + '" />' +
         '</div>' +
         '<h2 class="cat-name">' +
-          cats[i].name +
+          myCats[i].name +
         '</h2>' +
         '<h2 class="cat-date">' +
-          cats[i].dates +
+          myCats[i].dates +
         '</h2></div>');
     $('.cat-results').append(catCard);
   }

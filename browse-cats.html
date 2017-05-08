@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 
     <!-- Stylesheets -->
     <link href="css/main.css" rel="stylesheet">
@@ -50,7 +51,7 @@
         <h4>Click on a cat to see more info and to message an owner.</h4>
 
         <form id="search-name-form" class="form-inline">
-          <input type="text" class="form-control" placeholder="Search for cat by name" required />
+          <input type="text" class="form-control" id="cat-name" placeholder="Search for cat by name" required />
           <button class="btn btn-primary" id="search-name"><span class="glyphicon glyphicon-search"></span></button>
         </form>
 
