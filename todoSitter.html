@@ -8,318 +8,270 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="js/names.js"></script>
-    <!--<script>
-    	function clicked(id)
-		{
-		  console.log('inside clicked');
-		  var box = document.getElementById(id);
-		  if (box.checked==true) { sitterSide(id, 'add'); }
-		  else { sitterSide(id, 'remove'); }
-		}
-    </script>-->
-
     <link href="css/main.css" rel="stylesheet">
-		<link href="css/todoSitter.css" rel="stylesheet">
+    <link href="css/todo.css" rel="stylesheet">
 
-		<title>CatCo</title>
+    <title>CatCo</title>
   </head>
   <body>
-  		<script >
-  			var checkedItems = [];
+    <script>
+      var checkedItems = [];
+    
+      $(function() {
+        if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
+          checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
+          for (i=0; i < checkedItems.length; i++) {
+            
+            $('#'+checkedItems[i]).attr('checked','true');// = true;//,'true');
+          }
+        }
 
-			
-			$(function() {
-				if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
-					checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
-					for (i=0; i < checkedItems.length; i++) {
-						
-						$('#'+checkedItems[i]).attr('checked','true');// = true;//,'true');
-					}
-				}
+        $('.todo-item').click(function() {
+          var box = document.getElementById($(this).attr('id'));
+          if (box.checked==true) { checkedItems.push(box.id); }
+          else { 
+            index = checkedItems.indexOf(box.id);
+            checkedItems.splice(index,1); 
+          }
+          //checkedItems.push($(this).attr('id'));
+          window.sessionStorage.setItem('todo-items', JSON.stringify(checkedItems));
+        });
+      });
+    </script>
+      <!-- Navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="choose.html">
+              <img src="images/logo.png" class="logo"/>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
+              <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <div class="container-fluid main">
+        <div class="row">
+          <!-- Breadcrumbs -->
+          <ol class="breadcrumb">
+            <li><a href="choose.html">Choose User Mode</a></li>
+            <li><a href="catsitting-ginger.html">Cats to Catsit</a></li>
+            <li class="active">Ginger's Todo List</li>
+          </ol>
+        </div>
 
-				$('.todo-item').click(function() {
-					var box = document.getElementById($(this).attr('id'));
-					if (box.checked==true) { checkedItems.push(box.id); }
-					else { 
-						index = checkedItems.indexOf(box.id);
-						checkedItems.splice(index,1); 
-					}
-					//checkedItems.push($(this).attr('id'));
-					window.sessionStorage.setItem('todo-items', JSON.stringify(checkedItems));
-				});
-			});
-  		</script>
-	    <!-- Navbar -->
-	    <nav class="navbar navbar-default navbar-fixed-top">
-	      <div class="container-fluid">
-	        <div class="navbar-header">
-	          <a class="navbar-brand" href="choose.html">
-	            <img src="images/logo.png" class="logo"/>
-	          </a>
-	        </div>
-	        <div class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
-	            <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-	          </ul>
-	        </div>
-	      </div>
-	    </nav>
-	    <!-- Main Content -->
-	  	<div class='container-fluid main'>
-	  		<div class="brow">
-	        <!-- Breadcrumbs -->
-	        <ol class="breadcrumb">
-	          <li><a href="choose.html">Choose User Mode</a></li>
-	          <li><a href="catsitting-ginger.html">Cats to Catsit</a></li>
-	          <li class="active">Ginger's Todo List</li>
-	        </ol>
-	      </div>
+        <div class="row todo-container">
+          <div class="col-lg-6 outer">
+            <div class="todo-col">
+              <h3>Ginger</h3>
+              <div class="row text-center profile">
+                <div class="col-sm-4 profile-image">
+                  <img src="images/ginger-200-200.png" />
+                </div>
+                <div class="col-sm-8 profile-text">
+                  Hi! I'm Ginger! I like long walks along the beach and catching mice!
+                </div>
+              </div>
 
-	  		<div class='row'>
-	  			<div class='"col-sm-6 col-md-6 col-lg-6 todoOwner'>
-	  				
-	  				<div class='row outer'>
-	  					<h3>Ginger</h3>
-	  					<div class='"col-sm-6 col-md-6 col-lg-6 catsitterBio inner'>
-	  						<span><img src='images/ginger-200-200.png' class='profileImage'/></span>
-	  					</div>
-	  					<div class='"col-sm-6 col-md-6 col-lg-6 inner catsitterBio'>
-	  						Hi! I'm Ginger! I like long walks along the beach and catching mice!
-	  					</div>
-	  					<div class="table">
-		  				<table>
-		  					<tr>
-		  						<td>
-		  							<!--<button class="btn btn-info glyphicon glyphicon-info-sign modalButton"><br><br>More Info</button>-->
+              <div class="row text-center">
+                <div class="row">
+                  <button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#info-modal"><span class="glyphicon glyphicon-info-sign"></span><br><br>More Info</button>
+                  <button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#message-modal"><span class="glyphicon glyphicon-envelope"></span><br><br>Message Owner</button>
+                </div>
+                <div class="row">
+                  <button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#vet-modal-1"><span class="glyphicon glyphicon-plus"></span><br><br>Vet and Emergency Info</button>
+                  <button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#photo-modal"><span class="glyphicon glyphicon-camera"></span><br><br>Upload Photo</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-lg-6 outer">
+            <div class="todo-col">
+              <h3>Todo List</h3>
+              <div class="checkbox">
+                <label>
+                  <input class="todo-item" type="checkbox" value="" id="item1">
+                  &nbsp; Feed 1 cup, 9am
+                </label><br>
+                <label>
+                  <input class="todo-item" type="checkbox" value="" id="item2">
+                  &nbsp; Fill water bowl
+                </label><br>
+                <label>
+                  <input class="todo-item" type="checkbox" value="" id="item3">
+                  &nbsp; Play with Ginger
+                </label><br>
+                <label>
+                  <input class="todo-item" type="checkbox" value="" id="item4">
+                  &nbsp; Feed 1 cup, 6pm
+                </label><br>
+                <label>
+                  <input class="todo-item" type="checkbox" value="" id="item5">
+                  &nbsp; Clean litter box
+                </label><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#moreInfoModal"><span class="glyphicon glyphicon-info-sign"></span><br><br>More Info</button>
+      <!-- Modals -->
+      <div id="info-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <div class="col-md-6 text-center">
+                <div>
+                  <img src='images/ginger-200-200.png' class='profileImage'/>
+                </div>
+                <div>
+                  <h3>Ginger</h3>
+                  5 Tumbleside Drive<br>
+                  Cambridge, MA 02142
+                </div>
+              </div>
+              <div class="col-md-6">
+                Hi! I'm Ginger! I like long walks along the beach and catching mice!<br>
+                <h4>Personality Type:</h4> Playful
+                <h4>Favorite Toy:</h4> Gray Mouse
+                <h4>Normal Behaviors:</h4> Afternoon naps, vomiting around strangers
+                <h4>Feeding Schedule:</h4> Twice per day, 9am and 6pm, 1 Cup each
+                <h4>Litter Schedule:</h4> Once per week
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="message-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <h3>Opens mailto link</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-									<!-- Modal -->
-									<div id="moreInfoModal" class="modal fade" role="dialog">
-									  <div class="modal-dialog">
+      <div id="vet-modal-1" class="modal fade vet-modal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <div class="vet-modal-container">
+                <div class="vet-modal-header">
+                  <h3>Before you panic...</h3>
+                </div>
+                <h4>Normal behaviors for Ginger include:</h4>
+                <ul>
+                  <li>Afternoon naps</li>
+                  <li>Vomiting around strangers</li>
+                </ul>
+                <div class="text-center vet-advance-button">
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#vet-modal-2" data-dismiss="modal"><span class="glyphicon glyphicon-exclamation-sign"></span> Something Else is Wrong</button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <button type="button" class="close" data-dismiss="modal">&times;</button>
-									      </div>
-									      <div class="row">
-										      <div class="col-sm-6 col-md-6 col-lg-6 modal-body text-center">
-										      	<div>
-										        	<img src='images/ginger-200-200.png' class='profileImage'/>
-										        </div>
-										        <div>
-											        <h3>Ginger</h3>
-											        5 Tumbleside Drive<br>
-											        Cambridge, MA 02142
-											    </div>
-										      </div>
-										      <div class="col-sm-6 col-md-6 col-lg-6 modal-body">
-										        Hi! I'm Ginger! I like long walks along the beach and catching mice!<br>
-										        <h4>Personality Type:</h4> Playful
-										        <h4>Favorite Toy:</h4> Gray Mouse
-										        <h4>Normal Behaviors:</h4> Afternoon naps, vomitting around strangers
-										        <h4>Feeding Schedule:</h4> Twice per day, 9am and 6pm, 1 Cup each
-										        <h4>Litter Schedule:</h4> Once per week
-										      </div>
-										  </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									      </div>
-									    </div>
+      <div id="vet-modal-2" class="modal fade vet-modal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="vet-modal-container">
+                <div class="vet-modal-header">
+                  <h3>Vet and Emergency Info</h3>
+                </div>
+                <p>In case of emergency, call the owner at:</p>
+                <h4 class="indent">(555) 555-5555</h4>
+                <br>
+                <p>The preferred vet for Ginger is:</p>
+                <h4 class="indent">Purrfect Pet Care</h4>
+                <p class="indent">123 Cat Avenue<br>
+                (123) 123-1231<br>
+                Open until 9pm<br><br></p>
+                <div class="text-center vet-advance-button">
+                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#vet-modal-3" data-dismiss="modal"><span class="glyphicon glyphicon-search"></span> More Vets</button>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-									  </div>
-									</div>
+      <div id="vet-modal-3" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <h3>Goes to Google Maps</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		  						</td>
-		  						<td>
-		  							
-		  							
-		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#messageOwnerModal"><span class="glyphicon glyphicon-envelope"></span><br><br>Message Owner</button>
+      <div id="photo-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <h3>Opens documents to pick photo</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-		  								<!-- Modal -->
-									<div id="messageOwnerModal" class="modal fade" role="dialog">
-									  <div class="modal-dialog">
-
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <button type="button" class="close" data-dismiss="modal">&times;</button>
-									      </div>
-									      <div class="row">
-										   
-											        <h3>Opens mailto link</h3>
-
-										  </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									      </div>
-									    </div>
-
-									  </div>
-									</div>
-		  						</td>
-		  					</tr>
-		  					<tr>
-		  						<td>
-		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#vet1Modal"><span class="glyphicon glyphicon-plus"></span><br><br>Vet and Emergency Info</button>
-
-									<!-- Modal -->
-									<div id="vet1Modal" class="modal fade" role="dialog">
-									  <div class="modal-dialog">
-
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <button type="button" class="close" data-dismiss="modal">&times;</button>
-									      </div>
-									      <div class="modal-row">
-										   
-											        <h3>Before you panic...</h3>
-											        <h4>Normal behaviors for Ginger include:</h4><br>
-											        Afternoon naps<br>
-											        Vomitting around strangers<br><br>
-											        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#vet2Modal" data-dismiss="modal">Something Else is Wrong</button>
-
-										  </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									      </div>
-									    </div>
-
-									  </div>
-									</div>
-
-
-									<!-- Modal -->
-									<div id="vet2Modal" class="modal fade" role="dialog">
-									  <div class="modal-dialog">
-
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <button type="button" class="close" data-dismiss="modal">&times;</button>
-									      </div>
-									      <div class="modal-row">
-										   
-											        <h3>Vet and Emergency Info</h3>
-											        In case of emergency, call the owner at:<br>
-											        (555) 555-5555<br><br>
-											        <h4>The preferred vet for Ginger is:</h4><br>
-											        Perfect Pet Care<br>
-											        123 Cat Avenue<br>
-											        (123) 123-1231<br>
-											        Open until 9pm<br><br>
-											        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#vet3Modal" data-dismiss="modal">More Vets</button>
-
-										  </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									      </div>
-									    </div>
-
-									  </div>
-									</div>
-
-
-									<!-- Modal -->
-									<div id="vet3Modal" class="modal fade" role="dialog">
-									  <div class="modal-dialog">
-
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <button type="button" class="close" data-dismiss="modal">&times;</button>
-									      </div>
-									      <div class="row">
-										   
-											        <h3>Goes to Google</h3>
-
-										  </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									      </div>
-									    </div>
-
-									  </div>
-									</div>
-
-		  						</td>
-		  						<td>
-		  							<button type="button" class="btn btn-info modalButton" data-toggle="modal" data-target="#uploadPhotoModal"><span class="glyphicon glyphicon-camera"></span><br><br>Upload Photo</button>
-
-		  							<!-- Modal -->
-									<div id="uploadPhotoModal" class="modal fade" role="dialog">
-									  <div class="modal-dialog">
-
-									    <!-- Modal content-->
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <button type="button" class="close" data-dismiss="modal">&times;</button>
-									      </div>
-									      <div class="row">
-										   
-											        <h3>Opens documents to pick photo</h3>
-
-										  </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									      </div>
-									    </div>
-
-									  </div>
-									</div>
-		  						</td>
-		  					</tr>
-		  				</table>
-		  			</div>
-	  				</div>
-	  				
-	  			</div>
-	  			<div class='col-sm-6 col-md-6 col-lg-6 todoOwner'>
-	  				
-	  				<div class='row outer'>
-	  					<h3>Todo List</h3>
-	  					
-	  					<div class="checkbox">
-				          <label>
-				            <input class="todo-item" type="checkbox" value="" id="item1">
-				            <!--<span class="cr"><i class="cr-icon fa fa-check"></i></span>-->
-				            &nbsp; Feed 1 cup, 9am
-				          </label><br>
-				          <label>
-				            <input class="todo-item" type="checkbox" value="" id="item2">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Fill water bowl
-				          </label><br>
-				          <label>
-				            <input class="todo-item" type="checkbox" value="" id="item3">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Play with Ginger
-				          </label><br>
-				          <label>
-				            <input class="todo-item" type="checkbox" value="" id="item4">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Feed 1 cup, 6pm
-				          </label><br>
-				          <label>
-				            <input class="todo-item" type="checkbox" value="" id="item5">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Clean litter box
-				          </label><br>
-			        	</div>
-	  				</div>
-	  			</div>
-	  				
-	  		</div>
-	  	</div>
-
-	  	<script>
-		    // Set the homepage
-		    document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
-		  </script>
-		  
+      <script>
+        // Set the homepage
+        document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
+      </script>
+      
   </body>
 </html>

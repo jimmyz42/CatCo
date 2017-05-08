@@ -8,139 +8,139 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
     <link href="css/main.css" rel="stylesheet">
-		<link href="css/todoOwner.css" rel="stylesheet">
+    <link href="css/todo.css" rel="stylesheet">
 
-		<title>CatCo</title>
+    <title>CatCo</title>
     <script src="js/names.js"></script>
   </head>
   <body>
- 		<script>
-			var checkedItems = [];
-			
-			$(function() {
-				if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
-					checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
-					for (i=0; i < checkedItems.length; i++) {
-						document.getElementById(checkedItems[i]).style.visibility = 'visible';
-					}
-				}
-			});
-		</script>
-	    <!-- Navbar -->
-	    <nav class="navbar navbar-default navbar-fixed-top">
-	      <div class="container-fluid">
-	        <div class="navbar-header">
-	          <a class="navbar-brand" href="choose.html">
-	            <img src="images/logo.png" class="logo"/>
-	          </a>
-	        </div>
-	        <div class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
-	            <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-	          </ul>
-	        </div>
-	      </div>
-	    </nav>
+    <script>
+      var checkedItems = [];
+      
+      $(function() {
+        if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
+          checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
+          for (i=0; i < checkedItems.length; i++) {
+            document.getElementById(checkedItems[i]).style.visibility = 'visible';
+          }
+        }
+      });
+    </script>
+      <!-- Navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="choose.html">
+              <img src="images/logo.png" class="logo"/>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
+              <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-	    <!-- Main Content -->
-	  	<div class="container-fluid main">
-	  		<div class="row">
-	        <!-- Breadcrumbs -->
-	        <ol class="breadcrumb">
-	          <li><a href="choose.html">Choose User Mode</a></li>
-	          <li><a href="my-cats-frodo.html">My Cats</a></li>
-	          <li class="active">Ginger's Todo List</li>
-	        </ol>
-	      </div>
+      <!-- Main Content -->
+      <div class="container-fluid main">
+        <div class="row">
+          <!-- Breadcrumbs -->
+          <ol class="breadcrumb">
+            <li><a href="choose.html">Choose User Mode</a></li>
+            <li><a href="my-cats-frodo.html">My Cats</a></li>
+            <li class="active">Ginger's Todo List</li>
+          </ol>
+        </div>
 
-	      <div class="row todoOwner-container">
-	      	<div class="col-lg-6 outer">
-	      		<div class="todo-col">
-		      		<h3>Your Catsitter</h3>
-		      		<div class="row text-center profile">
-		      			<div class="col-sm-4 profile-image">
-		      				<img src="images/catsitter.png" />
-		      			</div>
-		      			<div class="col-sm-8 profile-text">
-		      				Hi! I'm Frodo, and I love cats!!!
-		      			</div>
-		      		</div>
+        <div class="row todo-container">
+          <div class="col-lg-6 outer">
+            <div class="todo-col">
+              <h3>Your Catsitter</h3>
+              <div class="row text-center profile">
+                <div class="col-sm-4 profile-image">
+                  <img src="images/catsitter.png" />
+                </div>
+                <div class="col-sm-8 profile-text">
+                  Hi! I'm Frodo, and I love cats!!!
+                </div>
+              </div>
 
-		      		<div class="row text-center sitter-contact">
-		      			<button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#call-modal"><span class="glyphicon glyphicon-earphone"></span><br><br>Call Me</button>
-		      			<button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#message-modal"><span class="glyphicon glyphicon-envelope"></span><br><br>Message Me</button>
-		      		</div>
-		      	</div>
-		      </div>
+              <div class="row text-center sitter-contact">
+                <button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#call-modal"><span class="glyphicon glyphicon-earphone"></span><br><br>Call Me</button>
+                <button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#message-modal"><span class="glyphicon glyphicon-envelope"></span><br><br>Message Me</button>
+              </div>
+            </div>
+          </div>
 
-	      	<div class="col-lg-6 outer">
-	      		<div class="todo-col">
-		      		<h3>Your Cat's Schedule</h3>
-		      		<div class="row text-center profile">
-		      			<div class="col-sm-4 profile-image">
-		      				<img src="images/ginger-200-200.png" />
-		      			</div>
-		      			<div class="col-sm-8 profile-name">
-		      				Ginger
-		      			</div>
-		      		</div>
+          <div class="col-lg-6 outer">
+            <div class="todo-col">
+              <h3>Your Cat's Schedule</h3>
+              <div class="row text-center profile">
+                <div class="col-sm-4 profile-image">
+                  <img src="images/ginger-200-200.png" />
+                </div>
+                <div class="col-sm-8 profile-name">
+                  Ginger
+                </div>
+              </div>
 
-		      		<div class="row todo">
-		      			<div>Below, you can see what Frodo has done today to care for Ginger.</div>
-		      			<div class="checkbox">
-			  					<ul>
-			  						<li><span class="glyphicon glyphicon-ok check" id="item1"></span> Feed 1 cup, 9am</li>
-			  						<li><span class="glyphicon glyphicon-ok check" id="item2"></span> Fill water bowl</li>
-			  						<li><span class="glyphicon glyphicon-ok check" id="item3"></span> Play with Ginger</li>
-			  						<li><span class="glyphicon glyphicon-ok check" id="item4"></span> Feed 1 cup, 6pm</li>
-			  						<li><span class="glyphicon glyphicon-ok check" id="item5"></span> Clean litter box</li>
-			  					</ul>
-		  					</div>
-		      		</div>
-		      	</div>
-	      	</div>
-	      </div>
-	  	</div>
+              <div class="row todo">
+                <div>Below, you can see what Frodo has done today to care for Ginger.</div>
+                <div class="checkbox">
+                  <ul>
+                    <li><span class="glyphicon glyphicon-ok check" id="item1"></span> Feed 1 cup, 9am</li>
+                    <li><span class="glyphicon glyphicon-ok check" id="item2"></span> Fill water bowl</li>
+                    <li><span class="glyphicon glyphicon-ok check" id="item3"></span> Play with Ginger</li>
+                    <li><span class="glyphicon glyphicon-ok check" id="item4"></span> Feed 1 cup, 6pm</li>
+                    <li><span class="glyphicon glyphicon-ok check" id="item5"></span> Clean litter box</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-	  	<!-- Modals -->
-	  	<div id="call-modal" class="modal fade" role="dialog" style="display: none;">
-			  <div class="modal-dialog">
-			    <!-- Modal content-->
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			      </div>
-			      <div class="row modal-text">
-			        <h3>Shows phone number</h3>
-					  </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+      <!-- Modals -->
+      <div id="call-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <h3>Shows phone number</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-			<div id="message-modal" class="modal fade" role="dialog" style="display: none;">
-			  <div class="modal-dialog">
-			    <!-- Modal content-->
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			      </div>
-			      <div class="row modal-text">
-			        <h3>Opens mailto link</h3>
-					  </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+      <div id="message-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row modal-body">
+              <h3>Opens mailto link</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-	  	<script>
-		    // Set the homepage
-		    document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
-		  </script>
+      <script>
+        // Set the homepage
+        document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
+      </script>
   </body>
 </html>
