@@ -44,8 +44,8 @@
 	    </nav>
 
 	    <!-- Main Content -->
-	  	<div class='container-fluid main'>
-	  		<div class="brow">
+	  	<div class="container-fluid main">
+	  		<div class="row">
 	        <!-- Breadcrumbs -->
 	        <ol class="breadcrumb">
 	          <li><a href="choose.html">Choose User Mode</a></li>
@@ -54,53 +54,89 @@
 	        </ol>
 	      </div>
 
-	  		<div class='row'>
-	  			<div class='"col-sm-6 col-md-6 col-lg-6 todoOwner'>
-	  				
-	  				<div class='row outer'>
-	  				<h3>Your Catsitter</h3>
-	  					<div class="col-sm-6 col-md-6 col-lg-6 catsitterBio inner">
-	  						<span><img src="images/catsitter.png" class="profileImage"/></span>
-	  					</div>
-	  					<div class="col-sm-6 col-md-6 col-lg-6 inner catsitterBio">
-	  						Hi! I'm Frodo, and I love cats!!!
-	  					</div>
-	  					<span class="catsitterContact"><span class='glyphicon glyphicon-earphone'></span> Call me at (555)111-2211</span><br>
-	  					<span class="catsitterContact"><span class='glyphicon glyphicon-envelope'></span> Message me</span>
-	  				</div>
-	  				
-	  			</div>
-	  			<div class='col-sm-6 col-md-6 col-lg-6 todoOwner'>
-	  				<div class='row outer'>
-	  					<h3>Your Cat's Schedule</h3>
-	  					<div class='"col-sm-6 col-md-6 col-lg-6 catsitterBio inner'>
-	  						<img src='images/ginger-200-200.png' class='profileImage'/>
-	  					</div>
-	  					<div class='"col-sm-6 col-md-6 col-lg-6 inner catsitterBio'>
-	  						<h3>Ginger</h3>
-	  					</div>
-	  					<h4>Below you can see what Frodo has done today to care for Ginger.</h4>
-	  					<div class="checkbox">
-		  					<ul>
-		  						<li><span class="glyphicon glyphicon-ok check" id="item1"></span> Feed 1 cup, 9am</li>
-		  					</ul>
-		  					<ul>
-		  						<li><span class="glyphicon glyphicon-ok check" id="item2"></span> Fill water bowl</li>
-		  					</ul>
-		  					<ul>
-		  						<li><span class="glyphicon glyphicon-ok check" id="item3"></span> Play with Ginger</li>
-		  					</ul>
-		  					<ul>
-		  						<li><span class="glyphicon glyphicon-ok check" id="item4"></span> Feed 1 cup, 6pm</li>
-		  					</ul>
-		  					<ul>
-		  						<li><span class="glyphicon glyphicon-ok check" id="item5"></span> Clean litter box</li>
-		  					</ul>
-	  					</div>
-	  				</div>
-	  			</div>
-	  		</div>
+	      <div class="row todoOwner-container">
+	      	<div class="col-lg-6 outer">
+	      		<div class="todo-col">
+		      		<h3>Your Catsitter</h3>
+		      		<div class="row text-center profile">
+		      			<div class="col-sm-4 profile-image">
+		      				<img src="images/catsitter.png" />
+		      			</div>
+		      			<div class="col-sm-8 profile-text">
+		      				Hi! I'm Frodo, and I love cats!!!
+		      			</div>
+		      		</div>
+
+		      		<div class="row text-center sitter-contact">
+		      			<button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#call-modal"><span class="glyphicon glyphicon-earphone"></span><br><br>Call Me</button>
+		      			<button type="button" class="btn btn-info square-button" data-toggle="modal" data-target="#message-modal"><span class="glyphicon glyphicon-envelope"></span><br><br>Message Me</button>
+		      		</div>
+		      	</div>
+		      </div>
+
+	      	<div class="col-lg-6 outer">
+	      		<div class="todo-col">
+		      		<h3>Your Cat's Schedule</h3>
+		      		<div class="row text-center profile">
+		      			<div class="col-sm-4 profile-image">
+		      				<img src="images/ginger-200-200.png" />
+		      			</div>
+		      			<div class="col-sm-8 profile-name">
+		      				Ginger
+		      			</div>
+		      		</div>
+
+		      		<div class="row todo">
+		      			<div>Below, you can see what Frodo has done today to care for Ginger.</div>
+		      			<div class="checkbox">
+			  					<ul>
+			  						<li><span class="glyphicon glyphicon-ok check" id="item1"></span> Feed 1 cup, 9am</li>
+			  						<li><span class="glyphicon glyphicon-ok check" id="item2"></span> Fill water bowl</li>
+			  						<li><span class="glyphicon glyphicon-ok check" id="item3"></span> Play with Ginger</li>
+			  						<li><span class="glyphicon glyphicon-ok check" id="item4"></span> Feed 1 cup, 6pm</li>
+			  						<li><span class="glyphicon glyphicon-ok check" id="item5"></span> Clean litter box</li>
+			  					</ul>
+		  					</div>
+		      		</div>
+		      	</div>
+	      	</div>
+	      </div>
 	  	</div>
+
+	  	<!-- Modals -->
+	  	<div id="call-modal" class="modal fade" role="dialog" style="display: none;">
+			  <div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			      </div>
+			      <div class="row modal-text">
+			        <h3>Shows phone number</h3>
+					  </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div id="message-modal" class="modal fade" role="dialog" style="display: none;">
+			  <div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			      </div>
+			      <div class="row modal-text">
+			        <h3>Opens mailto link</h3>
+					  </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
 	  	<script>
 		    // Set the homepage
