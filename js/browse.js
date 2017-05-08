@@ -1,6 +1,8 @@
+var cats;
+
 $(document).ready(function() {
   // Populate cat cards
-  var cats = cat_data['cats'];
+  cats = cat_data['cats'];
 
   showCats(cats);
 

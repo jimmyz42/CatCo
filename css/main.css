@@ -35,7 +35,7 @@ img.logo {
 }
 
 /* Cat card styles */
-.cat-card {
+.cat-card, .cat-card-noclick {
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;

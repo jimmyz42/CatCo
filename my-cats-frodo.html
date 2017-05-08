@@ -18,14 +18,7 @@
       window.sessionStorage.setItem('home', 'my-cats-frodo.html');
     </script>
   </head>
-
-
-
-
-
-
-
- <!-- Navbar copied from Jimmy-->  
+  <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -53,23 +46,25 @@
 
       <div class="row">
         <h1>My Cats</h1>
-        <div id="yourcats">
-          <div id="ginger">
-            <img src="images/ginger-200-200.png"/>
-            <h2>Ginger</h2>
-            <h2>4/7-4/9</h2>
-
-
-            <button class="btn btn-info" type="button" id="edit">
-              <span class="glyphicon glyphicon-edit"></span> Edit Cat Profile
-            </button>
-
-            <a href="todoOwner.html">
-              <button class="btn btn-info" type="button" id="sitter">
-                Being Cared for by Frodo
-              </button>
-            </a>
-
+        <div class="inner-align">
+          <div class="cat-card-noclick">
+            <div class="cat-image">
+              <img src="images/ginger-200-200.png" />
+            </div>
+            <h2 class="cat-name">
+              Ginger
+            </h2>
+            <h2 class="cat-date">
+              4/7-4/9
+            </h2>
+            <hr>
+            <div class="cat-button">
+              <a href="todoOwner.html">
+                <button class="btn btn-success" type="button">
+                  <img src="images/cat.svg" height="36" /> Being Cared for by Frodo
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -79,5 +74,5 @@
       // Set the homepage
       document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
     </script>
-
+  </body>
 </html>

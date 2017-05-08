@@ -7,8 +7,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
-
-
     <link href="css/main.css" rel="stylesheet">
 		<link href="css/todoOwner.css" rel="stylesheet">
 
@@ -16,25 +14,18 @@
     <script src="js/names.js"></script>
   </head>
   <body>
-  
- <script >
-  			var checkedItems = [];
-
+ 		<script>
+			var checkedItems = [];
 			
 			$(function() {
 				if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
 					checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
 					for (i=0; i < checkedItems.length; i++) {
-						
-						$('#'+checkedItems[i]).attr('checked','true');
 						document.getElementById(checkedItems[i]).style.visibility = 'visible';
-
 					}
 				}
-
-
 			});
-  		</script>
+		</script>
 	    <!-- Navbar -->
 	    <nav class="navbar navbar-default navbar-fixed-top">
 	      <div class="container-fluid">
@@ -51,8 +42,18 @@
 	        </div>
 	      </div>
 	    </nav>
+
 	    <!-- Main Content -->
 	  	<div class='container-fluid main'>
+	  		<div class="brow">
+	        <!-- Breadcrumbs -->
+	        <ol class="breadcrumb">
+	          <li><a href="choose.html">Choose User Mode</a></li>
+	          <li><a href="my-cats-frodo.html">My Cats</a></li>
+	          <li class="active">Ginger's Todo List</li>
+	        </ol>
+	      </div>
+
 	  		<div class='row'>
 	  			<div class='"col-sm-6 col-md-6 col-lg-6 todoOwner'>
 	  				
@@ -70,7 +71,6 @@
 	  				
 	  			</div>
 	  			<div class='col-sm-6 col-md-6 col-lg-6 todoOwner'>
-	  				
 	  				<div class='row outer'>
 	  					<h3>Your Cat's Schedule</h3>
 	  					<div class='"col-sm-6 col-md-6 col-lg-6 catsitterBio inner'>
@@ -80,35 +80,24 @@
 	  						<h3>Ginger</h3>
 	  					</div>
 	  					<h4>Below you can see what Frodo has done today to care for Ginger.</h4>
-		  				<div class="checkbox">
-				          <label>
-				            <input class='ind-checkbox' type="checkbox" value="" disabled id="item1">
-				            <!--<span class="cr"><i class="cr-icon fa fa-check"></i></span>-->
-				            &nbsp; Feed 1 cup, 9am
-				          </label><br>
-				          <label>
-				            <input class='ind-checkbox' type="checkbox" value="" disabled id="item2">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Fill water bowl
-				          </label><br>
-				          <label>
-				            <input class='ind-checkbox' type="checkbox" value="" disabled id="item3">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Play with Ginger
-				          </label><br>
-				          <label>
-				            <input class='ind-checkbox' type="checkbox" value="" disabled id="item4">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Feed 1 cup, 6pm
-				          </label><br>
-				          <label>
-				            <input class='ind-checkbox' type="checkbox" value="" disabled id="item5">
-				            <!--<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>-->
-				            &nbsp; Clean litter box
-				          </label><br>
-				        </div>
+	  					<div class="checkbox">
+		  					<ul>
+		  						<li><span class="glyphicon glyphicon-ok check" id="item1"></span> Feed 1 cup, 9am</li>
+		  					</ul>
+		  					<ul>
+		  						<li><span class="glyphicon glyphicon-ok check" id="item2"></span> Fill water bowl</li>
+		  					</ul>
+		  					<ul>
+		  						<li><span class="glyphicon glyphicon-ok check" id="item3"></span> Play with Ginger</li>
+		  					</ul>
+		  					<ul>
+		  						<li><span class="glyphicon glyphicon-ok check" id="item4"></span> Feed 1 cup, 6pm</li>
+		  					</ul>
+		  					<ul>
+		  						<li><span class="glyphicon glyphicon-ok check" id="item5"></span> Clean litter box</li>
+		  					</ul>
+	  					</div>
 	  				</div>
-	  				
 	  			</div>
 	  		</div>
 	  	</div>
