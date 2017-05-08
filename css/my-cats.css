@@ -21,18 +21,11 @@ h2 {
 	width: 90%;
 }
 
-#edit{
-	font-size: 30px;
-	position: absolute;
-	margin-left: 300px;
-	margin-top: -300px;
-}
-
 #request{
 	font-size: 30px;
 	position: absolute;
 	margin-left: 300px;
-	margin-top: -200px;
+    margin-top: -300px; 
 }
 
 #sitter{

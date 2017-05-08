@@ -88,8 +88,12 @@ img{
     display: block;
 }
 
-#Ginger {
+.cat_cards {
   cursor: pointer;
+}
+
+.cat_cards:hover {
+  background-color: #e6e6e6;
 }
 
 .ui-datepicker{
@@ -106,4 +110,9 @@ img{
 
 .btn-primary{
 	margin: 10px;
+}
+
+.cat-imgicon {
+  height: 20px;
+  display: inline;
 }

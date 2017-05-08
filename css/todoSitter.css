@@ -6,8 +6,8 @@
 .outer {
 	background-color: white; 
   margin: 2px;
-  box-shadow: 3px 3px 5px 6px #ccc;
-  border-radius: 25px;
+  border-radius: 10px;
+  border: black solid 1px;
 }
 
 .inner {
