@@ -50,6 +50,11 @@ h4 {
   padding-bottom: 20px;
 }
 
+.ind-checkbox {
+	visibility: hidden;
+	border-color: green;
+}
+
 input[type=checkbox]
 {
   /* Double-sized Checkboxes */
