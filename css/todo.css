@@ -30,6 +30,10 @@
   font-weight: bold;
 }
 
+.profile-text {
+  padding-left: 10px;
+}
+
 .sitter-contact, .todo {
   padding: 0 20px;
   font-size: 24px;
