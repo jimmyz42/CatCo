@@ -26,22 +26,24 @@
   <body>
   		<script >
   			var checkedItems = [];
-			if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
-				console.log(JSON.parse(window.sessionStorage.getItem('todo-items')));
-				checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
-				for (i=0; i < checkedItems.length; i++) {
-					console.log(checkedItems[i])
-					console.log($('#'+checkedItems[i]));
-					console.log(document.getElementById(checkedItems[i]))
-					$('#'+checkedItems[i]).attr('checked','true');// = true;//,'true');
-				}
-			}
+
 			
 			$(function() {
+				if(window.sessionStorage.getItem('todo-items') !== null && window.sessionStorage.getItem('todo-items') !== []) {
+					checkedItems = JSON.parse(window.sessionStorage.getItem('todo-items'));
+					for (i=0; i < checkedItems.length; i++) {
+						
+						$('#'+checkedItems[i]).attr('checked','true');// = true;//,'true');
+					}
+				}
+
 				$('.todo-item').click(function() {
 					var box = document.getElementById($(this).attr('id'));
 					if (box.checked==true) { checkedItems.push(box.id); }
-					else { checkedItems.pop(box.id); }
+					else { 
+						index = checkedItems.indexOf(box.id);
+						checkedItems.splice(index,1); 
+					}
 					//checkedItems.push($(this).attr('id'));
 					window.sessionStorage.setItem('todo-items', JSON.stringify(checkedItems));
 				});
