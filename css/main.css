@@ -28,3 +28,31 @@ img.logo {
   margin-bottom: 0;
   background-color: white;
 }
+
+.inner-align {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* Cat card styles */
+.cat-card {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.cat-card:hover {
+  background-color: #e6e6e6;
+}
+
+.cat-link {
+  color: inherit;
+}
+
+.cat-link:hover {
+  color: inherit;
+}

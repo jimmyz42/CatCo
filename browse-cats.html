@@ -15,93 +15,57 @@
     <!-- Stylesheets -->
     <script src="js/names.js"></script>
     <script src="data/browse-cats-data.js"></script>
-    <script>
-      $(function() {
-
-        var cats = cat_data['cats'];
-        for(var i=0; i<cats.length; i++) {
-          var cat_card = $('<div class="cat_cards col-xs-3" id=' + cats[i].name +' onClick="showModal(' + i + ')"></div>').appendTo('#othercats');
-          cat_card.append('<img src="' + cats[i].picture +'"/>')
-          cat_card.append("<h2>" + cats[i].name + "</h2>")
-          cat_card.append("<h2>" + cats[i].dates + "</h2>")
-          }
-        window.showModal = function showModal(index){
-          $('.cat-name').html(cats[index].name);
-          $('#photo').attr('src', cats[index].picture);
-          $('#cat-modal').modal('show');
-          if (index!=0){
-            $('#msg').attr('disabled', true)
-          }
-          else{
-            $('#msg').attr('disabled', false)
-          }
-        }  
-      });
-
-      $(document).ready(function() {
-        $('#datepicker-start').datepicker();
-        $('#datepicker-end').datepicker();
-      });
-    </script>
-
+    <script src="js/browse.js"></script>
   </head>
-
-
-
   <body>
-
-   <!-- Navbar copied from Lauren-->  
-    <div>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="choose.html">
-              <img src="images/logo.png" class="logo"/>
-            </a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
-              <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-            </ul>
-          </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="choose.html">
+            <img src="images/logo.png" class="logo"/>
+          </a>
         </div>
-      </nav>
-    </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
+            <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-
-        <!-- Div 1--> 
-
-    <div>
-      <h1>Browse Cats</h1>
-      <div id="yourcats">
-        <div>
-          <h4 id="browsecats">Click on a cat to see more info and to message an owner.</h4>
-
-          <div class="form-inline" id="search">
-            <input class="form-control" type="text" placeholder="Search for cats here"></input>
-            <button type="button" class="btn btn-primary">Search Cats</button>
-          </div>
-
-          <div class="form-inline">
-            <input type="text" class="form-control datepicker" id="datepicker-start" placeholder="Start Date" required>
-            to
-            <input type="text" class="form-control datepicker" id="datepicker-end" placeholder="End Date" required>
-            <button type="button" class="btn btn-primary">Search Dates</button>
-          </div>
-
+    <!-- Main Content -->
+    <div class="container-fluid main">
+      <div class="row">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+          <li><a href="choose.html">Choose User Mode</a></li>
+          <li class="active">Browse Cats</li>
+        </ol>
       </div>
 
+      <div class="row browse-controls">
+        <h1>Browse Cats</h1>
+        <h4>Click on a cat to see more info and to message an owner.</h4>
 
+        <form id="search-name-form" class="form-inline">
+          <input type="text" class="form-control" placeholder="Search for cat by name" required />
+          <button class="btn btn-primary" id="search-name"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
 
+        <form id="search-dates-form" class="form-inline">
+          <input type="text" class="form-control datepicker" id="datepicker-start" placeholder="Start Date" required />
+          to
+          <input type="text" class="form-control datepicker" id="datepicker-end" placeholder="End Date" required />
+          <button class="btn btn-primary" id="search-dates"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
 
-      <div class="container">
-        <div id="othercats" class="row"></div>
+      <div class="row inner-align cat-results">
+        <!-- Cat results here -->
       </div>
     </div>
-
-
-
 
   <div class="modal fade" id="cat-modal" role="dialog">
     <div class="modal-dialog"></div>
@@ -110,111 +74,94 @@
         <button type="button" class="close" data-dismiss="modal">x</button>
       </div>
       <div class="modal-body">
-
-
-
-
-
-
-
-
-
-
-
-   <!-- Modal insides copied from Lauren-->  
-
         <div class="section-content">
-                <table class="profile-table">
-                  <tbody>
-                    <tr>
-                      <td class="col text-center">
-                        <img id="photo" src="images/ginger-200-200.png" /><br />
-                        <a href="catsitting-ginger.html">
-                            <button type="button" class="btn btn-info" id="msg">Message Owner</button>
-                        </a>
-                      </td>
-                      <td class="lastcol">
-                        <div id="profile">
-                          <h3 style="margin-top: 0">Hi! I'm <span class="cat-name">Ginger</span>.</h3>
-                          <p>I like long walks along the beach and catching mice.</p>
-                          <p>Personality Type: Playful</p>
-                          <p>Favorite Toy: Gray Mouse</p>
-                          <p>Normal Behaviors:</p>
-                          <ul>
-                            <li>Afternoon naps</li>
-                            <li>Vomiting around strangers</li>
-                          </ul>
-                          <p>Feed 1 cup per meal.</p>
-                        </div>
-                      </td>
-                    </tr>
-                    <!-- <tr><td class="col"></td><td class="lastcol"><hr></td></tr> -->
-                    <tr>
-                      <td class="col"></td>
-                      <td class="lastcol">
-                        <table class="contact-table">
-                          <tbody>
-                            <tr>
-                              <td colspan="2" class="lastcol"><h3 style="margin-top: 0">My Contact Info</h3></td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">My Phone:</td>
-                              <td class="lastcol">
-                                <div id="my-phone">(555) 555-5555</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">My Email:</td>
-                              <td class="lastcol">
-                                <div id="my-email">c4tzrprecious@meow.com</div>
-                              </td>
-                            </tr>
-                            <tr>
-                            </tr>
-                            <tr>
-                              <td colspan="2" class="lastcol"><h3>Preferred Vet Contact</h3></td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">Name:</td>
-                              <td class="lastcol">
-                                <div id="vet-name">Purrfect Pet Care</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">Address:</td>
-                              <td class="lastcol">
-                                <div id="vet-address-1">123 Cat Ave</div>
-                                <div id="vet-address-2">Boston, MA</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">Phone:</td>
-                              <td class="lastcol">
-                                <div id="vet-phone">(123) 123-1231</div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-
-
-
-
-
-
-
-
+          <table class="profile-table">
+            <tbody>
+              <tr>
+                <td class="col text-center">
+                  <img id="photo" src="images/ginger-200-200.png" /><br />
+                  <a href="catsitting-ginger.html">
+                      <button type="button" class="btn btn-info" id="msg"><img src="images/cat.svg" class="cat-imgicon" /> Catsit This Cat</button>
+                  </a>
+                </td>
+                <td class="lastcol">
+                  <div id="profile">
+                    <h3 style="margin-top: 0">Hi! I'm <span class="modal-cat-name">Ginger</span>.</h3>
+                    <p>I like long walks along the beach and catching mice.</p>
+                    <p>Personality Type: Playful</p>
+                    <p>Favorite Toy: Gray Mouse</p>
+                    <p>Normal Behaviors:</p>
+                    <ul>
+                      <li>Afternoon naps</li>
+                      <li>Vomiting around strangers</li>
+                    </ul>
+                    <p>Feed 1 cup per meal.</p>
+                  </div>
+                </td>
+              </tr>
+              <!-- <tr><td class="col"></td><td class="lastcol"><hr></td></tr> -->
+              <tr>
+                <td class="col"></td>
+                <td class="lastcol">
+                  <table class="contact-table">
+                    <tbody>
+                      <tr>
+                        <td colspan="2" class="lastcol"><h3 style="margin-top: 0">My Contact Info</h3></td>
+                      </tr>
+                      <tr>
+                        <td class="col input-label">My Phone:</td>
+                        <td class="lastcol">
+                          <div id="my-phone">(555) 555-5555</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col input-label">My Email:</td>
+                        <td class="lastcol">
+                          <div id="my-email">c4tzrprecious@meow.com</div>
+                        </td>
+                      </tr>
+                      <tr>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="lastcol"><h3>Preferred Vet Contact</h3></td>
+                      </tr>
+                      <tr>
+                        <td class="col input-label">Name:</td>
+                        <td class="lastcol">
+                          <div id="vet-name">Purrfect Pet Care</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col input-label">Address:</td>
+                        <td class="lastcol">
+                          <div id="vet-address-1">123 Cat Ave</div>
+                          <div id="vet-address-2">Boston, MA</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="col input-label">Phone:</td>
+                        <td class="lastcol">
+                          <div id="vet-phone">(123) 123-1231</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+
+  <script>
+    // Set the homepage
+    document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
+  </script>
 
  </body>
 </html>

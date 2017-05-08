@@ -48,16 +48,34 @@
 
       <div class="row">
         <h1>My Cats</h1>
+        <div class="inner-align">
+          <a class="cat-link" href="todoSitter.html">
+            <div class="cat-card">
+              <div class="cat-image">
+                <img src="images/ginger-200-200.png" />
+              </div>
+              <h2 class="cat-name">
+                Ginger
+              </h2>
+              <h2 class="cat-date">
+                4/7-4/9
+              </h2>
+              <div class="cat-button">
+                <a href="requestSitter.html">
+                  <button class="btn btn-info" type="button">
+                    <img src="images/cat.svg" height="36" /> Request Catsitter
+                  </button>
+                </a>
+              </div>
+            </div>
+          </a>
+        </div>
         <div id="yourcats">
           <div id="ginger">
             <img src="images/ginger-200-200.png"/>
             <h2>Ginger</h2>
             <h2>4/7-4/9</h2>
 
-
-            <button class="btn btn-info" type="button" id="edit">
-              <span class="glyphicon glyphicon-edit"></span> Edit Cat Profile
-            </button>
 
             <a href="requestSitter.html">
               <button class="btn btn-info" type="button" id="request">
@@ -69,5 +87,10 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Set the homepage
+      document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
+    </script>
 
 </html>

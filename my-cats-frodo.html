@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/forum.css">
     <link rel="stylesheet" href="css/my-cats.css">
     <script src="js/names.js"></script>
+
+    <script>
+      // Update homepage
+      window.sessionStorage.setItem('home', 'my-cats-frodo.html');
+    </script>
   </head>
 
 
@@ -69,5 +74,10 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Set the homepage
+      document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
+    </script>
 
 </html>

@@ -12,217 +12,73 @@
     
     <!-- Stylesheets -->
     <script src="js/names.js"></script>
-    <script src="data/browse-cats-data.js"></script>
     <script>
+      // Update homepage
+      window.sessionStorage.setItem('home', 'catsitting-ginger.html');
+    </script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="choose.html">
+            <img src="images/logo.png" class="logo"/>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
+            <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    $(function() {
-        var cats = cat_data['cats'];
+    <!-- Main Content -->
+    <div class="container-fluid main">
+      <div class="row">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+          <li><a href="choose.html">Choose User Mode</a></li>
+          <li class="active">Cats to Catsit</li>
+        </ol>
+      </div>
 
-        var cat_card= $("#Ginger-Sitting")
-        console.log(cat_card)
-        cat_card.append('<img src="images/ginger-200-200.png"/>')
-        cat_card.append("<h2>Ginger</h2>")
-        cat_card.append("<h2>4/7-4/9</h2>")
+      <div class="row">
+        <h1>Cats You're Currently Taking Care Of</h1>
+        <div class="inner-align">
+          <a class="cat-link" href="todoSitter.html">
+            <div class="cat-card">
+              <div class="cat-image">
+                <img src="images/ginger-200-200.png" />
+              </div>
+              <h2 class="cat-name">
+                Ginger
+              </h2>
+              <h2 class="cat-date">
+                4/7-4/9
+              </h2>
+            </div>
+          </a>
+        </div>
+      </div>
 
+      <div class="row">
+        <h1>Looking to Catsit Other Cats?
+          <a href="browse-cats.html">
+            <button class="btn btn-primary" type="button">
+              <img src="images/cat.svg" height="36" id="browse-other" /> Browse Other Cats
+            </button>
+          </a>
+        </h1>
+      </div>
+    </div>
 
-        for(var i=1; i<cats.length; i++) {
-          var cat_card = $('<div class="cat_cards col-xs-3" id=' + cats[i].name +' onClick="showModal(\'' + cats[i].name + '-modal\')"></div>').appendTo('#othercats');
-          cat_card.append('<img src="' + cats[i].picture +'"/>')
-          cat_card.append("<h2>" + cats[i].name + "</h2>")
-          cat_card.append("<h2>" + cats[i].dates + "</h2>")
-        }
-        window.showModal = function showModal(id){
-          $('#' + id).modal('show');
-        }  
-      });
-
-
-
+    <script>
+      // Set the homepage
+      document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
     </script>
 
-  </head>
-
-
-
-  <body>
-
-   <!-- Navbar copied from Jimmy-->  
-    <div>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="choose.html">
-              <img src="images/logo.png" class="logo"/>
-            </a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="forums.html"><span class="glyphicon glyphicon-comment"></span> Forums</a></li>
-              <li><a href="choose.html"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-
-        <!-- Div 1--> 
-    <div>
-      <h1>Cats You're Currently Taking Care Of</h1>
-
-      <div class="container">
-      <div id="yourcats">
-        <a href="todoSitter.html">
-        <div onclick="console.log("hey")" class="cat_cards col-xs-3" id="Ginger-Sitting" onclick="showModal(' + cats[i].name + 'modal)"></div>
-      </a>
-      </div>
-    </div>
-
-      </div>
-    </div>
-    <br>
-    <div>
-      <h1>Other Cats</h1>
-      <div class="container">
-        <div id="othercats" class="row"></div>
-      </div>
-    </div>
-
-
-  <div class="modal fade" id="Ginger-modal" role="dialog">
-    <div class="modal-dialog"></div>
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">x</button>
-        <h4 class="modal-title">Ginger</h4>
-      </div>
-      <div class="modal-body">
-
-
-
-
-
-
-
-
-
-
-
-   <!-- Modal insides copied from Lauren-->  
-
-        <div class="section-content">
-                <table class="profile-table">
-                  <tbody>
-                    <tr>
-                      <td class="col text-center">
-                        <img id="photo" src="images/ginger-200-200.png" /><br />
-                        <!-- http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button -->
-                        <label class="btn btn-info btn-file" id="photo-upload" style="visibility: hidden">
-                          <span class="glyphicon glyphicon-picture"></span> Upload Photo <input type="file" accept="image/*" style="display:none">
-                        </label>
-                      </td>
-                      <td class="lastcol">
-                        <div id="profile">
-                          <p>Hi! I'm Ginger. I like long walks along the beach and catching mice.</p>
-                          <p>Personality Type: Playful</p>
-                          <p>Favorite Toy: Gray Mouse</p>
-                          <p>Normal Behaviors:</p>
-                          <ul>
-                            <li>Afternoon naps</li>
-                            <li>Vomiting around strangers</li>
-                          </ul>
-                          <p>Feed 1 cup per meal.</p>
-                        </div>
-                        <hr>
-                      </td>
-                    </tr>
-                    <!-- <tr><td class="col"></td><td class="lastcol"><hr></td></tr> -->
-                    <tr>
-                      <td class="col"></td>
-                      <td class="lastcol">
-                        <table class="contact-table">
-                          <tbody>
-                            <tr>
-                              <td colspan="2" class="lastcol"><h3>My Contact Info</h3></td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">My Phone:</td>
-                              <td class="lastcol">
-                                <div id="my-phone">(555) 555-5555</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">My Email:</td>
-                              <td class="lastcol">
-                                <div id="my-email">c4tzrprecious@meow.com</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan="2" class="lastcol"><hr></td>
-                            </tr>
-                            <tr>
-                              <td colspan="2" class="lastcol"><h3>Preferred Vet Contact</h3></td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">Name:</td>
-                              <td class="lastcol">
-                                <div id="vet-name">Purrfect Pet Care</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">Address:</td>
-                              <td class="lastcol">
-                                <div id="vet-address-1">123 Cat Ave</div>
-                                <div id="vet-address-2">Boston, MA</div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="col input-label">Phone:</td>
-                              <td class="lastcol">
-                                <div id="vet-phone">(123) 123-1231</div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <a href="cattsitting-ginger.html">
-        <button type="button" class="btn btn-info" id="msg">Message Owner</button>
-      </a>
-
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-
-
- </body>
+  </body>
 </html>
