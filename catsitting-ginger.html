@@ -15,6 +15,9 @@
     <script src="data/browse-cats-data.js"></script>
     <script>
 
+    // Update homepage
+    window.sessionStorage.setItem('home', 'catsitting-ginger.html');
+
     $(function() {
         var cats = cat_data['cats'];
 
@@ -223,6 +226,10 @@
     </div>
   </div>
 
+  <script>
+    // Set the homepage
+    document.getElementsByClassName('navbar-brand')[0].href = window.sessionStorage.getItem('home');
+  </script>
 
  </body>
 </html>
