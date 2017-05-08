@@ -35,7 +35,7 @@ function showModal(index) {
   $('.modal-cat-name').html(cats[index].name);
   $('#photo').attr('src', cats[index].picture);
   $('#cat-modal').modal('show');
-  if (index!=0){
+  if (cats[index].name !== 'Ginger'){
     $('#msg').attr('disabled', true)
   }
   else{
