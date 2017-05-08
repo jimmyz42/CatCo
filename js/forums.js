@@ -8,6 +8,7 @@ $(function() {
 
   $('#list-all').click(function() {
     $('.post-container').remove();
+    $('#search').val('');
     showContent();
   });
 
@@ -41,7 +42,7 @@ $(function() {
         for(section_name in post_content) {
           var container = $('<div class="row post-container"></div>').appendTo('.main');
           var section = $('<div class="col-sm-12 section"></div>').appendTo(container);
-          var header = $('<div data-toggle="collapse" data-target="#section' + section_cnt + '"></div>').appendTo(section);
+          var header = $('<div data-toggle="collapse" data-target="#section' + section_cnt + '" style="cursor: pointer"></div>').appendTo(section);
           header.append('<span class="section-title">' + section_name + '</span>');
           header.append('<button class="down-menu btn btn-xs btn-default" data-toggle="collapse" data-target="#section' + section_cnt + '"><span class="glyphicon glyphicon-menu-down updown"></span></button>');
           var post_container = $('<div class="panel-collapse collapse" id="section' + section_cnt + '"></div>').appendTo(section);
